@@ -1,0 +1,193 @@
+.card {
+  // FUNCTIONALITY
+  perspective: 150rem; // The lower the perspective value, the more dramatic.
+  // We want a subtle flip in this case, so 1500px
+  -moz-perspective: 150rem; // Mozilla Firefox responsive
+  position: relative; // When absolute positioning a child element the parent must be relative.
+  height: 51rem; // When we absolute positioned the cards, we took them out of the natural flow...
+  // ... which caused their height to collapse. The fix to this is setting the parent's height to...
+  // ... the same as each side.
+
+  &__side {
+    height: 51rem;
+    transition: all 0.8s ease; // all allows all transforms, .8s duration, ease smooths the effect
+    position: absolute; // The sides must be positioned on top of each other to complete the effect
+    top: 0;
+    left: 0;
+    width: 100%; // When the sides are absolute positioned, the front is slightly wider than the...
+    //... back because the sides fit to their content's width. Here we're fixing that.
+    backface-visibility: hidden; // Hides the back side of an element, only 1 side is visble at atime
+    border-radius: $default-border-radius;
+    overflow: hidden; // Imgs are overflowing parent element so we must hide the overflow
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary
+        );
+      }
+
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-primary,
+          $color-primary-dark
+        );
+      }
+
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          $color-secondary-light,
+          $color-secondary
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    // When we hover the card, the .card__side--front will be transformed
+    transform: rotateY(-180deg);
+    // On hover, flips card on y-axis. -180 to get a proper flip
+    // ONLY the front side rotates 180 deg
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0);
+    // The back side is already rotated so it stays at 0
+  }
+
+  // CARD FRONT SIDE STYLING
+  &__picture {
+    background-size: cover; // We want each img to fit properly inside each card
+    height: 28rem; // We have to size the imgs manually
+    background-blend-mode: screen; // Allows the imgs to be visible thru the gradient w/a nice effect
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    // Compatible across all browsers
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    // top-left: 0 0, top-right: 100% 0, bottom-right: 100% 85%, bottom-left: 0 100%
+
+    &--1 {
+      background-image: linear-gradient(
+          to left bottom,
+          $color-secondary-light,
+          $color-secondary
+        ),
+        url(../img/dumbbell-min.jpg);
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-primary,
+          $color-primary-dark
+        ),
+        url(../img/jog2-min.jpg);
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          $color-secondary,
+          $color-secondary-light
+        ),
+        url(../img/heroedit-min.jpg);
+    }
+  }
+
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: $color-white;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%; // To help force line-break on heading
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem; // Space around heading
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; // Properly aligns each line of heading on top of itself
+
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary, 0.85),
+        rgba($color-secondary, 0.85)
+      );
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-primary-dark, 0.85),
+        rgba($color-primary-dark, 0.85)
+      );
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba($color-secondary, 0.85),
+        rgba($color-secondary-light, 0.85)
+      );
+    }
+  }
+
+  &__details {
+    padding: 3rem; // Space between img and ul
+
+    p {
+      font-size: $default-font-size;
+      padding: 0 2rem;
+    }
+  }
+
+  // CARD BACK SIDE STYLING
+  &__videolist {
+    ul {
+      list-style: none;
+      width: 80%;
+      color: $color-white;
+      margin: 0 auto;
+      font-size: 1.8rem;
+      padding-top: 3rem;
+    }
+
+    li {
+      text-align: center;
+      font-weight: 550;
+      white-space: nowrap;
+      padding-top: 2rem;
+
+      &:not(:last-child) {
+        // Every li except the last one
+        border-bottom: 1px solid $color-offwhite;
+      }
+    }
+  }
+
+  // CARD BACK BUTTON
+  &__cta {
+    // Call to action btn
+    position: absolute;
+    left: 25%; // 50% of the parent element's(.card's) width to the left
+    //transform: translate(-50%, -50%);
+    // Shifts 50% of the element's(cta btn's) width to the left and 50% of the element's height to the top(centers btn)
+    width: 50%;
+    text-align: center;
+    margin-top: 4.5rem;
+  }
+}

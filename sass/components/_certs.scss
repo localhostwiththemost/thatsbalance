@@ -1,0 +1,52 @@
+.certs {
+  width: 75%;
+  color: $color-white;
+  background-color: $color-secondary;
+  padding: 2rem 2rem;
+  border-radius: $default-border-radius;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.35);
+  display: block;
+
+  @include respond(small-phone) {
+    // When the screen width is LESS THAN 450px
+    //display: none;
+    //visibility: none;
+  }
+
+  @include respond(phone) {
+    // When the screen width is LESS THAN 600px
+  }
+
+  @include respond(tab-portrait) {
+    width: 90%;
+    margin-top: -8rem;
+  }
+
+  ul {
+    list-style: none;
+    font-size: $default-font-size;
+    margin-top: 1rem;
+    padding: 0 2rem;
+  }
+
+  p {
+    font-size: $default-font-size;
+    margin-top: 2rem;
+    padding: 0 2rem;
+  }
+
+  blockquote {
+    font-size: $default-font-size;
+    font-style: italic;
+    padding: 0 2rem;
+  }
+
+  figcaption {
+    margin-left: 25rem;
+    font-size: 1.5rem;
+
+    @include respond(phone) {
+      margin-left: 20rem;
+    }
+  }
+}

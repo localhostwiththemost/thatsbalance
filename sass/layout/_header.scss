@@ -1,0 +1,37 @@
+.header {
+  height: 100vh;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-secondary, 0.4),
+      rgba($color-secondary, 0.4)
+    ),
+    url("../img/heroedit-min.jpg");
+  background-size: cover;
+  background-position: top;
+  background-attachment: fixed;
+  position: relative;
+
+  &__logo-box {
+    /*The container for our logo*/
+    position: absolute;
+    top: -3rem;
+    left: -2rem;
+  }
+
+  &__logo {
+    // NEED AN HD LOGO
+    height: 23rem; /*When we specify height, width is scaled accordingly(vice versa)*/
+    width: 23rem;
+  }
+
+  &__text-box {
+    position: absolute;
+    top: 50%; /*40% from the top and 50% from the left of the header(parent element)*/
+    left: 50%; /*Measurement starts at the top left of the .text-box element(Therefore its off center)*/
+    transform: translate(
+      -50%,
+      -50%
+    ); /*Shifts 50% of the element's(text-box) width to the left and 50% of the element's height to the top(centers text-box)*/
+    text-align: center; /*Centers call to action button under the h1*/
+  }
+}

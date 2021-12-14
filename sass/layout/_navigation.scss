@@ -1,0 +1,234 @@
+// MAIN NAV
+.main-nav {
+  float: right;
+  list-style: none; //Removes the bullet points from the list
+  margin-top: 5.5rem;
+  margin-right: 2rem;
+
+  @include respond(small-phone) {
+    // When the screen width is LESS THAN 450px
+    float: none;
+    margin-left: 1.5rem;
+  }
+
+  @include respond(phone) {
+    // When the screen width is LESS THAN 600px
+    float: left;
+  }
+
+  @include respond(tab-portrait) {
+    float: left;
+  }
+}
+
+.main-nav li {
+  display: inline-block; // Inline-block so they can be side-by-side
+  font-size: 2rem;
+  margin-left: 3rem;
+
+  @include respond(small-phone) {
+    // When the screen width is LESS THAN 450px
+    margin-left: 1.2rem;
+  }
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+  padding-top: 0.8rem;
+  padding-bottom: 0.5rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 90%; // 90% of 20px (defined in the html rule^)
+  border-bottom: 2px solid transparent;
+  -webkit-transition: border-bottom 0.2s;
+  -o-transition: border-bottom 0.2s;
+  transition: border-bottom 0.2s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+  border-bottom: 2px solid $color-primary;
+}
+
+// STICKY MAIN NAVI
+.sticky {
+  position: fixed; // Stays at same position, even when scrolled
+  top: 0;
+  left: 0; // We have to define where the nav will be, in this case the top left corner
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.98);
+  -webkit-box-shadow: 0 2px 2px #efefef;
+  box-shadow: 0 2px 2px #efefef; // 0 x-axis, 2px y-axis, 2px blur, grey shadow
+  z-index: 9999; // Makes sure no other elements appear on top of the sticky nav
+}
+
+.sticky .main-nav {
+  margin-top: 1.8rem; // The main nav will be 18px from the top of its container/centers on sticky nav
+  padding-bottom: 1.5rem;
+}
+
+.sticky .main-nav li a:link,
+.sticky .main-nav li a:visited {
+  // We want these styles to apply only if they are inside of the sticky class
+  padding: 0.5rem 0; // We want the blue underline to be at the bottom of the nav
+  color: #555;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+// CONTACT PAGE NAV
+.contact-nav {
+  float: right;
+  list-style: none; //Removes the bullet points from the list
+  margin-bottom: 5rem;
+  margin-right: 2rem;
+
+  @include respond(phone) {
+    // When the screen width is LESS THAN 600px
+    margin-right: 0;
+  }
+
+  @include respond(tab-portrait) {
+    margin-left: 3rem;
+    float: none;
+  }
+
+  @include respond(tab-landscape) {
+    margin-right: 2rem;
+  }
+}
+
+.contact-nav li {
+  display: inline-block; // Inline-block so they can be side-by-side
+  font-size: 2rem;
+  margin-left: 3rem;
+
+  @include respond(small-phone) {
+    // When the screen width is LESS THAN 450px
+    margin-left: 2rem;
+  }
+}
+
+.contact-nav li a:link,
+.contact-nav li a:visited {
+  padding-top: 0.8rem;
+  padding-bottom: 0.5rem;
+  color: #555;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 90%; // 90% of 20px (defined in the html rule^)
+  border-bottom: 2px solid transparent;
+  -webkit-transition: border-bottom 0.2s;
+  -o-transition: border-bottom 0.2s;
+  transition: border-bottom 0.2s;
+}
+
+.contact-nav li a:hover,
+.contact-nav li a:active {
+  border-bottom: 2px solid $color-primary;
+}
+
+// STICKY CONTACT NAVI
+.sticky {
+  position: fixed; // Stays at same position, even when scrolled
+  top: 0;
+  left: 0; // We have to define where the nav will be, in this case the top left corner
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.98);
+  -webkit-box-shadow: 0 2px 2px #efefef;
+  box-shadow: 0 2px 2px #efefef; // 0 x-axis, 2px y-axis, 2px blur, grey shadow
+  z-index: 9999; // Makes sure no other elements appear on top of the sticky nav
+}
+
+.sticky .contact-nav {
+  margin-top: 1.5rem;
+  margin-bottom: -0.5rem;
+  padding-bottom: 2rem;
+}
+
+.sticky .contact-nav li a:link,
+.sticky .contact-nav li a:visited {
+  // We want these styles to apply only if they are inside of the sticky class
+  padding: 0.5rem 0; // We want the blue underline to be at the bottom of the nav
+  color: #555;
+}
+
+///////////////////////////////////////////////////////////////////////////////
+
+// FAQ PAGE NAV
+.faq-nav {
+  float: right;
+  list-style: none; //Removes the bullet points from the list
+  margin-bottom: 5rem;
+  margin-right: 2rem;
+  padding-top: 8rem;
+
+  @include respond(phone) {
+    // When the screen width is LESS THAN 600px
+    margin-right: 0;
+  }
+
+  @include respond(tab-portrait) {
+    margin-right: 0;
+  }
+
+  @include respond(tab-landscape) {
+    margin-right: 2rem;
+  }
+}
+
+.faq-nav li {
+  display: inline-block; // Inline-block so they can be side-by-side
+  font-size: 2rem;
+  margin-left: 3rem;
+
+  @include respond(small-phone) {
+    // When the screen width is LESS THAN 450px
+    margin-left: 1rem;
+  }
+}
+
+.faq-nav li a:link,
+.faq-nav li a:visited {
+  padding-top: 0.8rem;
+  padding-bottom: 0.5rem;
+  color: #555;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 90%; // 90% of 20px (defined in the html rule^)
+  border-bottom: 2px solid transparent;
+  -webkit-transition: border-bottom 0.2s;
+  -o-transition: border-bottom 0.2s;
+  transition: border-bottom 0.2s;
+}
+
+.faq-nav li a:hover,
+.faq-nav li a:active {
+  border-bottom: 2px solid $color-primary;
+}
+
+// STICKY FAQ NAVI
+.sticky {
+  position: fixed; // Stays at same position, even when scrolled
+  top: 0;
+  left: 0; // We have to define where the nav will be, in this case the top left corner
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.98);
+  -webkit-box-shadow: 0 2px 2px #efefef;
+  box-shadow: 0 2px 2px #efefef; // 0 x-axis, 2px y-axis, 2px blur, grey shadow
+  z-index: 9999; // Makes sure no other elements appear on top of the sticky nav
+}
+
+.sticky .faq-nav {
+  margin-top: -6.5rem;
+  margin-bottom: -0.5rem;
+  padding-bottom: 2rem;
+}
+
+.sticky .faq-nav li a:link,
+.sticky .faq-nav li a:visited {
+  // We want these styles to apply only if they are inside of the sticky class
+  padding: 0.5rem 0; // We want the blue underline to be at the bottom of the nav
+  color: #555;
+}

@@ -1,0 +1,98 @@
+// TYPOGRAPHY
+.heading-primary-contact {
+  font-size: 3.5rem;
+  font-weight: 200;
+  color: $color-grey-dark;
+  text-transform: uppercase;
+  word-spacing: 0.5rem;
+  letter-spacing: 0.8rem;
+
+  &::after {
+    display: block;
+    height: 2px;
+    background-color: $color-primary;
+    content: " ";
+    width: 10rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+}
+
+.heading-secondary-contact {
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+}
+
+.heading-tertiary-contact {
+  font-size: 2rem;
+  font-weight: 550;
+  letter-spacing: 0.2rem;
+}
+
+.contact-p {
+  font-size: $default-font-size;
+  padding: 0 25rem;
+
+  @include respond(phone) {
+    // When the screen width is LESS THAN 600px
+    padding: 0;
+  }
+
+  @include respond(tab-landscape) {
+    padding: 0;
+  }
+}
+
+// ELEMENTS
+.contact-form-section {
+  padding: 8rem 0;
+  background-color: $color-offwhite;
+
+  @include respond(small-phone) {
+    // When the screen width is LESS THAN 400px
+    //width: 100%;
+  }
+}
+
+.contact-form-intro {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 0.3rem;
+  color: $color-black;
+  font-size: 1.6rem;
+  padding: 5rem;
+  text-align: center;
+}
+
+.contact-form-container {
+  width: 50%;
+  border-radius: $default-border-radius;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+  // 0 x, 1.5rem y, 4rem blur, black w/ 20% opacity
+  background-color: $color-white;
+  margin: 0 auto;
+  padding: 5rem;
+  display: block;
+  text-align: center;
+
+  @include respond(small-phone) {
+    // When the screen width is LESS THAN 400px
+    width: 100%;
+  }
+
+  @include respond(phone) {
+    // When the screen width is LESS THAN 600px
+    width: 100%;
+  }
+
+  @include respond(tab-portrait) {
+    width: 100%;
+  }
+
+  @include respond(tab-landscape) {
+    width: 100%;
+  }
+}

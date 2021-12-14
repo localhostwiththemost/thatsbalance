@@ -1,0 +1,128 @@
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.7; /*The line-height is 1.7 times bigger than default(depends on font-size)*/
+}
+
+.heading-primary {
+  // ALL h1's
+  color: $color-white;
+  text-transform: uppercase;
+
+  &--main {
+    // PERSONAL TRAINING. ANYTIME. ANYWHERE. heading
+    display: block; /*Block elements create linebreaks before and after them(what we want here)*/
+    font-size: 6rem;
+    //font-weight: 800;
+    font-weight: 300;
+    letter-spacing: 0.5rem;
+    white-space: nowrap;
+    animation-name: moveInTop;
+    animation-duration: 1s;
+    animation-timing-function: ease-out; /*Faster to start, slower to end*/
+
+    @include respond(small-phone) {
+      // When the screen width is LESS THAN 450px
+      //font-size: 1rem;
+    }
+
+    @include respond(phone) {
+      // When the screen width is LESS THAN 600px, we want to decrease the size of the header text
+      font-size: 2.5rem;
+    }
+  }
+
+  &--sub {
+    // (now thats balance) heading
+    display: block; /*Block elements take up 100% of the width of the viewport(not height)*/
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.3rem;
+    margin-bottom: 2rem; // Space between heading and btn below
+    white-space: nowrap;
+    animation-name: moveInBottom;
+    //animation-delay: 0.2s;
+    animation-duration: 2.6s;
+    //animation-timing-function: ease-out; /*Faster to start, slower to end*/
+  }
+
+  &--title {
+    display: block;
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: 1rem;
+  }
+}
+
+.heading-secondary {
+  // ALL h2's
+  font-size: 3.5rem;
+  font-weight: 200;
+  color: $color-grey-dark;
+  text-transform: uppercase;
+  word-spacing: 0.5rem;
+  letter-spacing: 0.8rem;
+
+  &::after {
+    display: block;
+    height: 2px;
+    background-color: $color-primary;
+    content: " ";
+    width: 10rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+
+  @include respond(phone) {
+    // When the screen width is LESS THAN 600px, we want to decrease the size of the header text
+    font-size: 2.5rem;
+  }
+}
+
+.heading-secondary-white {
+  // ALL h2's
+  font-size: 3.5rem;
+  font-weight: 200;
+  color: $color-white;
+  text-transform: uppercase;
+  word-spacing: 0.5rem;
+  letter-spacing: 0.8rem;
+
+  &::after {
+    display: block;
+    height: 2px;
+    background-color: $color-primary;
+    content: " ";
+    width: 10rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+  }
+}
+
+.heading-tertiary {
+  // ALL h3's
+  font-size: 2.5rem;
+  font-weight: 600;
+  letter-spacing: 0.2rem;
+  //white-space: nowrap;
+
+  @include respond(small-phone) {
+    // When the screen width is LESS THAN 450px
+    font-size: 2rem;
+  }
+}
+
+.text-link {
+  &:link,
+  &:visited {
+    color: $color-white;
+    //background: $color-bloomit-blue;
+    text-decoration: none; // Removes undelines
+    display: inline-block;
+  }
+
+  &:hover,
+  &:active {
+    color: $color-primary;
+  }
+}

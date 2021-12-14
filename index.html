@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Thatsbalance | Personal Training</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <div class="row">
+          <ul class="main-nav">
+            <li>
+              <a href="contact.html">Join</a>
+            </li>
+            <li>
+              <a href="#workouts">Workouts</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+            <li>
+              <a href="faq.html">FAQ</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div class="header__logo-box">
+        <!--Since img are inline elements, good practice is to place them within div and position the div rather than the img itself-->
+      </div>
+      <div class="header__text-box">
+        <h1 class="heading-primary">
+          <span class="heading-primary--main">Personal Training. </span>
+          <span class="heading-primary--main">Anytime. Anywhere.</span>
+          <!--Span is used to markup part of some text, in this case h1-->
+          <span class="heading-primary--sub">(Now that's balance)</span>
+        </h1>
+        <a
+          href="contact.html"
+          class="btn-main btn-main__white btn-main__animated"
+          >Get Built Today</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <section class="section-yourtrainer js--section-yourtrainer">
+        <div class="u-center-text u-margin-bottom-big">
+          <h2 class="heading-secondary">Your Trainer</h2>
+        </div>
+        <div class="row" id="trainer-row">
+          <div class="col-1-of-2" id="trainer-col">
+            <div class="img-container">
+              <img src="img/pt-min.jpg" class="img-container__img1" />
+            </div>
+          </div>
+          <div class="col-1-of-2" id="trainer-col">
+            <div class="certs">
+              <h3 class="heading-tertiary u-center-text">T. Wells</h3>
+              <ul>
+                <li><b>Certification</b>: Personal Training from NFPT</li>
+                <li><b>Education</b>: Associate's of Applied Science</li>
+                <li><b>Training Style</b>: Bodybuilding, Group Fitness</li>
+                <li>
+                  <b>Instagram</b>:
+                  <a
+                    href="https://www.instagram.com/t.m.wells/?hl=en"
+                    target="_blank"
+                    class="text-link"
+                    >@t.m.wells</a
+                  >
+                </li>
+              </ul>
+              <p>
+                Hey, T. Wells here. Feel free to message me with any workout
+                related questions. I am available Monday-Saturday 5am-12pm,
+                4pm-8pm (varies weekly).
+              </p>
+              <p>And remember...</p>
+              <figure>
+                <blockquote>
+                  "One step in the right direction is better than a hundred
+                  years of thinking about it"
+                </blockquote>
+                <figcaption>- T. Harv Eker</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-workouts" id="workouts">
+        <div class="u-center-text u-margin-bottom-big u-margin-top-small">
+          <h2 class="heading-secondary">Your Workouts</h2>
+        </div>
+        <div class="row">
+          <div class="col-1-of-3">
+            <div class="card">
+              <div class="card__side card__side--front">
+                <div class="card__picture card__picture--1">&nbsp;</div>
+                <h4 class="card__heading">
+                  <span class="card__heading-span card__heading-span--1">
+                    Beginner
+                  </span>
+                </h4>
+                <div class="card__details">
+                  <p>
+                    Basic workouts to get you familiar with proper technniques
+                    and condition your body.
+                  </p>
+                </div>
+              </div>
+              <div class="card__side card__side--back card__side--back-1">
+                <div class="card__videolist">
+                  <ul>
+                    <li>Stretching 101</li>
+                    <li>Nutrition 101</li>
+                    <li>Beginner Home Workout</li>
+                    <li>Beginner Gym Workout</li>
+                    <li>And more!</li>
+                  </ul>
+                  <a
+                    href="contact.html"
+                    class="
+                      btn-main btn-main__white btn-main__animated
+                      card__cta
+                    "
+                    >Join Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-1-of-3">
+            <div class="card">
+              <div class="card__side card__side--front">
+                <div class="card__picture card__picture--2">&nbsp;</div>
+                <h4 class="card__heading">
+                  <span class="card__heading-span card__heading-span--2">
+                    Intermediate
+                  </span>
+                </h4>
+                <div class="card__details">
+                  <p>Standard workouts to get you up and moving.</p>
+                </div>
+              </div>
+              <div class="card__side card__side--back card__side--back-2">
+                <div class="card__videolist">
+                  <ul>
+                    <li>Intermediate Home Workout</li>
+                    <li>Intermediate Gym Workout</li>
+                    <li>Low Impact Cardio</li>
+                    <li>And more!</li>
+                  </ul>
+                  <a
+                    href="contact.html"
+                    class="
+                      btn-main btn-main__white btn-main__animated
+                      card__cta
+                    "
+                    >Join Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-1-of-3">
+            <div class="card">
+              <div class="card__side card__side--front">
+                <div class="card__picture card__picture--3">&nbsp;</div>
+                <h4 class="card__heading">
+                  <span class="card__heading-span card__heading-span--3">
+                    Pro
+                  </span>
+                </h4>
+                <div class="card__details">
+                  <p>Advanced workouts for the more experienced trainee.</p>
+                </div>
+              </div>
+              <div class="card__side card__side--back card__side--back-3">
+                <div class="card__videolist">
+                  <ul>
+                    <li>Kick Boxing HIIT</li>
+                    <li>6 Pack Abs/Core</li>
+                    <li>And more!</li>
+                  </ul>
+                  <a
+                    href="contact.html"
+                    class="
+                      btn-main btn-main__white btn-main__animated
+                      card__cta
+                    "
+                    >Join Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="u-center-text u-margin-top-big">
+          <a href="contact.html" class="btn-text">All Workouts &rarr;</a>
+        </div>
+      </section>
+
+      <section class="section-mealplan">
+        <div class="u-center-text u-margin-bottom-medium u-margin-top-small">
+          <h2 class="heading-secondary">Create Your Mealplan</h2>
+        </div>
+        <div class="mealplan-textbox u-margin-bottom-medium">
+          <h3 class="heading-tertiary u-center-text u-margin-bottom-small">
+            With the Expertise of T. Wells
+          </h3>
+          <p class="u-center-text">
+            Create a custom mealplan, pivotal for your fitness journey, with the
+            help of your very own personal trainer today for only $30.
+          </p>
+          <a
+            href="contact.html"
+            class="btn-main btn-main__navy btn-main__animated card__cta"
+            >Create Mealplan</a
+          >
+        </div>
+
+        <div class="row u-center-text">
+          <img src="img/4-min.jpg" alt="Autumn pumpkin soup" />
+          <img src="img/5-min.jpg" alt="Paleo beef steak with vegetables" />
+          <img
+            src="img/6-min.jpg"
+            alt="Healthy baguette with egg and vegetables"
+          />
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="row social">
+        <div class="social__navigation">
+          <ul class="social__list">
+            <li class="social__item">
+              <a
+                href="https://www.facebook.com/thatsbalance"
+                target="_blank"
+                class="social__link"
+                ><ion-icon name="logo-facebook"></ion-icon
+              ></a>
+            </li>
+            <li class="social__item">
+              <a
+                href="https://www.instagram.com/thatsbalance/"
+                target="_blank"
+                class="social__link"
+                ><ion-icon name="logo-instagram"></ion-icon
+              ></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-1-of-2">
+          <div class="footer__navigation">
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a href="contact.html" class="footer__link">Sign Up</a>
+              </li>
+              <li class="footer__item">
+                <a href="contact.html" class="footer__link">Contact</a>
+              </li>
+              <li class="footer__item">
+                <a href="contact.html" class="footer__link">Workouts</a>
+              </li>
+              <li class="footer__item">
+                <a href="faq.html" class="footer__link">FAQ</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="col-1-of-2">
+          <p class="footer__copyright">
+            Built by <a href="#" class="footer__link">Joseph Powell</a>; &nbsp;
+            a Houston-based frontend developer. &nbsp; Copyright&copy; by Joseph
+            Powell.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

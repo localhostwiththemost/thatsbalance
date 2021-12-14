@@ -1,0 +1,23 @@
+.img-container {
+  display: block;
+
+  @include respond(phone) {
+    visibility: hidden;
+    display: none;
+  }
+
+  @include respond(tab-portrait) {
+    visibility: hidden;
+    display: none;
+  }
+
+  @include respond(tab-landscape) {
+    margin-left: 8rem;
+  }
+
+  &__img1 {
+    width: 110%;
+    border-radius: $default-border-radius;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.35);
+  }
+}
