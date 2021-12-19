@@ -1,4 +1,61 @@
 <!DOCTYPE html>
+
+<?php
+$message_sent = false;
+
+if(isset($_POST['name']) && $_POST['name'] !='') {
+if($_POST['age'] >= 18 && $_POST['age'] !='') {
+if(isset($_POST['email']) && $_POST['email'] !='') {
+if( filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ) {
+if(isset($_POST['phone']) && $_POST['phone'] !='') {
+// IF name,age,email and phone are filled out, submit form
+
+$userName = $_POST['name'];
+$userAge = $_POST['age'];
+$userEmail = $_POST['email'];
+$userPhone = $_POST['phone'];
+$userRoutine = $_POST['routine'];
+$userDiet = $_POST['diet'];
+$userInjuries = $_POST['injuries'];
+$userGoals = $_POST['goals'];
+$userProgress = $_POST['progress'];
+$userRoadblocks = $_POST['roadblocks'];
+$userTrainer = $_POST['trainer'];
+$userFitprog = $_POST['fitprog'];
+$userFast = $_POST['fast'];
+$userFit = $_POST['fit'];
+$messageSubject = "New Thatsbalance Client";
+
+
+
+$to = "jpowelldev@gmail.com";
+$body = "";
+
+$body .= "From: ".$userName. "\r\n";
+$body .= "Age: ".$userAge. "\r\n";
+$body .= "Email: ".$userEmail. "\r\n";
+$body .= "Phone: ".$userPhone. "\r\n";
+$body .= "Routine: ".$userRoutine. "\r\n";
+$body .= "Diet: ".$userDiet. "\r\n";
+$body .= "Injuries: ".$userInjuries. "\r\n";
+$body .= "Fitness Goals: ".$userGoals. "\r\n";
+$body .= "Fitness Progress Last Month: ".$userProgress. "\r\n";
+$body .= "Roadblocks: ".$userRoadblocks. "\r\n";
+$body .= "Trainer or Program?: ".$userTrainer. "\r\n";
+$body .= "How is their fitness progress going?: ".$userFitprog. "\r\n";
+$body .= "Are they interested in fast progress?: ".$userFast. "\r\n";
+$body .= "Which best fits them?: ".$userFit. "\r\n";
+
+mail($to, $messageSubject, $body);
+
+$message_sent = true;
+}
+} 
+}
+}
+}
+?>
+
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -15,13 +72,22 @@
     <title>Thatsbalance | Contact</title>
   </head>
   <body>
+    <?php
+    if($message_sent):
+    ?>
+
+    <h3>Thanks, we'll be in touch</h3>
+
+    <?php
+    else:
+    ?>
     <main>
       <section class="contact-form-section">
         <nav>
           <div class="row">
             <ul class="contact-nav">
               <li>
-                <a href="#">Join</a>
+                <a href="contact.php">Join</a>
               </li>
               <li>
                 <a href="index.html#workouts">Workouts</a>
@@ -58,7 +124,7 @@
         <div class="contact-form-container">
           <form
             method="POST"
-            action="contact-form.php"
+            action="contact.php"
             class="form"
             id="contact-form"
             name="contact-form"
@@ -404,6 +470,7 @@
             <div class="row u-margin-top-medium">
               <button
                 class="btn-main btn-main__navy btn-main__animated form__btn"
+                type="submit"
                 name="submit"
               >
                 Send &rarr;
@@ -413,6 +480,10 @@
         </div>
       </section>
     </main>
+    <?php
+  endif;
+  ?>
+
 
     <footer class="footer">
       <div class="row social">
@@ -443,7 +514,7 @@
           <div class="footer__navigation">
             <ul class="footer__list">
               <li class="footer__item">
-                <a href="contact.html" class="footer__link">Join</a>
+                <a href="contact.php" class="footer__link">Join</a>
               </li>
               <li class="footer__item">
                 <a href="index.html#workouts" class="footer__link">Workouts</a>
