@@ -78,7 +78,9 @@ $message_sent = true;
     if($message_sent):
     ?>
 
-    <h3>Thanks, we'll be in touch</h3>
+<div class="contact-form-intro u-margin-top-medium u-margin-bottom-medium">
+    <h2 class="heading-secondary-contact">Thanks, we'll be in touch</h2>
+</div>
 
     <?php
     else:
