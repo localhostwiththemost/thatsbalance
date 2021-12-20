@@ -178,8 +178,9 @@
   &__radio-btn {
     display: inline-block;
   }
+}
 
-  /*&__btn {
-    text-align: center;
-  }*/
+// IF the form is submitted unsuccessfully, the required inputs should appear with a red outline
+.form-invalid {
+  outline: 2px solid $color-error-red;
 }
