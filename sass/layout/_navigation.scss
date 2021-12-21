@@ -89,14 +89,24 @@
   margin-bottom: 5rem;
   margin-right: 2rem;
 
+  @include respond(small-phone) {
+    // When the screen width is LESS THAN 450px
+    float: none;
+    text-align: center;
+    margin-top: 0;
+  }
+
   @include respond(phone) {
     // When the screen width is LESS THAN 600px
-    margin-right: 0;
+    float: none;
+    text-align: center;
+    margin-top: 0;
   }
 
   @include respond(tab-portrait) {
-    margin-left: 3rem;
     float: none;
+    text-align: center;
+    margin-top: 0;
   }
 
   @include respond(tab-landscape) {
@@ -169,13 +179,24 @@
   margin-right: 2rem;
   padding-top: 8rem;
 
+  @include respond(small-phone) {
+    // When the screen width is LESS THAN 450px
+    float: none;
+    text-align: center;
+    margin-top: 0;
+  }
+
   @include respond(phone) {
     // When the screen width is LESS THAN 600px
-    margin-right: 0;
+    float: none;
+    text-align: center;
+    margin-top: 0;
   }
 
   @include respond(tab-portrait) {
-    margin-right: 0;
+    float: none;
+    text-align: center;
+    margin-top: 0;
   }
 
   @include respond(tab-landscape) {

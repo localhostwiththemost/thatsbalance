@@ -857,6 +857,7 @@ body {
 
 .header {
   height: 100vh;
+  -webkit-background-image: linear-gradient(to right bottom, rgba(22, 29, 59, 0.4), rgba(22, 29, 59, 0.4)), url("../img/heroedit-min.jpg");
   background-image: linear-gradient(to right bottom, rgba(22, 29, 59, 0.4), rgba(22, 29, 59, 0.4)), url("../img/heroedit-min.jpg");
   -webkit-background-size: cover;
   background-size: cover;
@@ -865,12 +866,16 @@ body {
   -webkit-background-attachment: fixed;
   background-attachment: fixed;
   position: relative;
-  /*
-    @include respond(small-phone) {
-      // When the screen width is LESS THAN 400px scroll with the page(mobile safari bug)
-      background-attachment: scroll;
-    }
-  */
+}
+@media (max-width: 28.125em) {
+  .header {
+    background-attachment: scroll;
+  }
+}
+@media (max-width: 37.5em) {
+  .header {
+    background-attachment: scroll;
+  }
 }
 .header__logo-box {
   /*The container for our logo*/
@@ -981,15 +986,25 @@ body {
   margin-bottom: 5rem;
   margin-right: 2rem;
 }
+@media (max-width: 28.125em) {
+  .contact-nav {
+    float: none;
+    text-align: center;
+    margin-top: 0;
+  }
+}
 @media (max-width: 37.5em) {
   .contact-nav {
-    margin-right: 0;
+    float: none;
+    text-align: center;
+    margin-top: 0;
   }
 }
 @media (max-width: 56.25em) {
   .contact-nav {
-    margin-left: 3rem;
     float: none;
+    text-align: center;
+    margin-top: 0;
   }
 }
 @media (max-width: 75em) {
@@ -1058,14 +1073,25 @@ body {
   margin-right: 2rem;
   padding-top: 8rem;
 }
+@media (max-width: 28.125em) {
+  .faq-nav {
+    float: none;
+    text-align: center;
+    margin-top: 0;
+  }
+}
 @media (max-width: 37.5em) {
   .faq-nav {
-    margin-right: 0;
+    float: none;
+    text-align: center;
+    margin-top: 0;
   }
 }
 @media (max-width: 56.25em) {
   .faq-nav {
-    margin-right: 0;
+    float: none;
+    text-align: center;
+    margin-top: 0;
   }
 }
 @media (max-width: 75em) {
