@@ -28,7 +28,7 @@ $messageSubject = "New Thatsbalance Client";
 
 
 
-$to = "jpowelldev@gmail.com";
+$to = "thatisbalance@gmail.com";
 $body = "";
 
 $body .= "From: ".$userName. "\r\n";

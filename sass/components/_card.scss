@@ -16,6 +16,7 @@
     left: 0;
     width: 100%; // When the sides are absolute positioned, the front is slightly wider than the...
     //... back because the sides fit to their content's width. Here we're fixing that.
+    -webkit-backface-visibility: hidden; // SAFARI
     backface-visibility: hidden; // Hides the back side of an element, only 1 side is visble at atime
     border-radius: $default-border-radius;
     overflow: hidden; // Imgs are overflowing parent element so we must hide the overflow
@@ -27,11 +28,6 @@
 
     &--back {
       transform: rotateY(180deg);
-
-      @include respond(small-phone) {
-        // When the screen width is LESS THAN 450px
-        transform: none;
-      }
 
       &-1 {
         background-image: linear-gradient(
@@ -64,21 +60,11 @@
     transform: rotateY(-180deg);
     // On hover, flips card on y-axis. -180 to get a proper flip
     // ONLY the front side rotates 180 deg
-
-    @include respond(small-phone) {
-      // When the screen width is LESS THAN 450px
-      transform: none;
-    }
   }
 
   &:hover &__side--back {
     transform: rotateY(0);
     // The back side is already rotated so it stays at 0
-
-    @include respond(small-phone) {
-      // When the screen width is LESS THAN 450px
-      transform: none;
-    }
   }
 
   // CARD FRONT SIDE STYLING

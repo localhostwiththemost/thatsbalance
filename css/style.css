@@ -192,10 +192,6 @@ body {
   margin-bottom: 8rem !important;
 }
 
-.u-margin-bottom-huge {
-  margin-bottom: 15rem !important;
-}
-
 .u-margin-top-none {
   margin-bottom: 0rem !important;
 }
@@ -359,6 +355,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 0.3rem;
   overflow: hidden;
@@ -369,11 +366,6 @@ body {
 }
 .card__side--back {
   transform: rotateY(180deg);
-}
-@media (max-width: 28.125em) {
-  .card__side--back {
-    transform: none;
-  }
 }
 .card__side--back-1 {
   background-image: linear-gradient(to right bottom, #313755, #161d3b);
@@ -387,18 +379,8 @@ body {
 .card:hover .card__side--front {
   transform: rotateY(-180deg);
 }
-@media (max-width: 28.125em) {
-  .card:hover .card__side--front {
-    transform: none;
-  }
-}
 .card:hover .card__side--back {
   transform: rotateY(0);
-}
-@media (max-width: 28.125em) {
-  .card:hover .card__side--back {
-    transform: none;
-  }
 }
 .card__picture {
   background-size: cover;
@@ -727,9 +709,14 @@ body {
   display: inline-block;
   white-space: nowrap;
 }
+@media (max-width: 28.125em) {
+  .footer__navigation {
+    margin: 0 auto;
+  }
+}
 @media (max-width: 37.5em) {
   .footer__navigation {
-    margin-left: 4rem;
+    margin: 0 auto;
   }
 }
 @media (max-width: 56.25em) {
@@ -766,9 +753,14 @@ body {
   width: 80%;
   float: right;
 }
+@media (max-width: 28.125em) {
+  .footer__copyright {
+    margin: 0 auto;
+  }
+}
 @media (max-width: 37.5em) {
   .footer__copyright {
-    margin-right: 5rem;
+    margin: 0 auto;
   }
 }
 @media (max-width: 56.25em) {
@@ -905,7 +897,7 @@ body {
 @media (max-width: 28.125em) {
   .main-nav {
     float: none;
-    margin-left: 1.5rem;
+    text-align: center;
   }
 }
 @media (max-width: 37.5em) {
@@ -1001,7 +993,7 @@ body {
 }
 @media (max-width: 28.125em) {
   .contact-nav li {
-    margin-left: 2rem;
+    margin-left: 1rem;
   }
 }
 
@@ -1077,7 +1069,7 @@ body {
 }
 @media (max-width: 28.125em) {
   .faq-nav li {
-    margin-left: 1rem;
+    margin-left: 1.5rem;
   }
 }
 
