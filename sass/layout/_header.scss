@@ -1,5 +1,11 @@
 .header {
   height: 100vh;
+  -webkit-background-image: linear-gradient(
+      to right bottom,
+      rgba($color-secondary, 0.4),
+      rgba($color-secondary, 0.4)
+    ),
+    url("../img/heroedit-min.jpg");
   background-image: linear-gradient(
       to right bottom,
       rgba($color-secondary, 0.4),
