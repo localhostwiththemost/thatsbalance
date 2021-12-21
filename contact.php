@@ -78,9 +78,12 @@ $message_sent = true;
     if($message_sent):
     ?>
 
-<div class="contact-form-intro u-margin-top-big u-margin-bottom-huge">
+<div class="contact-form-intro u-margin-top-big u-margin-bottom-big">
     <h2 class="heading-secondary-contact">Thanks, we'll be in touch</h2>
-</div>
+    <div class="u-center-text u-margin-top-small">
+          <a href="index.html" class="btn-text">Return to home page</a>
+        </div>
+  </div>
 
     <?php
     else:
@@ -484,9 +487,6 @@ $message_sent = true;
         </div>
       </section>
     </main>
-    <?php
-  endif;
-  ?>
 
 
     <footer class="footer">
@@ -554,5 +554,9 @@ $message_sent = true;
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/script.js"></script>
+  
+    <?php
+  endif;
+  ?>
   </body>
 </html>
