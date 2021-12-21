@@ -28,6 +28,11 @@
     &--back {
       transform: rotateY(180deg);
 
+      @include respond(small-phone) {
+        // When the screen width is LESS THAN 450px
+        transform: none;
+      }
+
       &-1 {
         background-image: linear-gradient(
           to right bottom,
@@ -59,11 +64,21 @@
     transform: rotateY(-180deg);
     // On hover, flips card on y-axis. -180 to get a proper flip
     // ONLY the front side rotates 180 deg
+
+    @include respond(small-phone) {
+      // When the screen width is LESS THAN 450px
+      transform: none;
+    }
   }
 
   &:hover &__side--back {
     transform: rotateY(0);
     // The back side is already rotated so it stays at 0
+
+    @include respond(small-phone) {
+      // When the screen width is LESS THAN 450px
+      transform: none;
+    }
   }
 
   // CARD FRONT SIDE STYLING

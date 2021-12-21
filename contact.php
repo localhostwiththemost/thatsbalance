@@ -78,7 +78,7 @@ $message_sent = true;
     if($message_sent):
     ?>
 
-<div class="contact-form-intro u-margin-top-big u-margin-bottom-big">
+<div class="contact-form-intro u-margin-top-big u-margin-bottom-huge">
     <h2 class="heading-secondary-contact">Thanks, we'll be in touch</h2>
 </div>
 
@@ -418,11 +418,11 @@ $message_sent = true;
                   <input
                     class="form__radio-btn"
                     type="radio"
-                    id="free"
+                    id="trial"
                     name="fit"
-                    value="Free"
+                    value="Trial"
                   /> 
-                  <label class="form__radio-label" for="free"
+                  <label class="form__radio-label" for="trial"
                     >I want a free trial first</label
                   >
                 </div>

@@ -192,6 +192,10 @@ body {
   margin-bottom: 8rem !important;
 }
 
+.u-margin-bottom-huge {
+  margin-bottom: 15rem !important;
+}
+
 .u-margin-top-none {
   margin-bottom: 0rem !important;
 }
@@ -366,6 +370,11 @@ body {
 .card__side--back {
   transform: rotateY(180deg);
 }
+@media (max-width: 28.125em) {
+  .card__side--back {
+    transform: none;
+  }
+}
 .card__side--back-1 {
   background-image: linear-gradient(to right bottom, #313755, #161d3b);
 }
@@ -378,8 +387,18 @@ body {
 .card:hover .card__side--front {
   transform: rotateY(-180deg);
 }
+@media (max-width: 28.125em) {
+  .card:hover .card__side--front {
+    transform: none;
+  }
+}
 .card:hover .card__side--back {
   transform: rotateY(0);
+}
+@media (max-width: 28.125em) {
+  .card:hover .card__side--back {
+    transform: none;
+  }
 }
 .card__picture {
   background-size: cover;
