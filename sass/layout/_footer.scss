@@ -18,7 +18,6 @@
 
     @include respond(phone) {
       // When the screen width is LESS THAN 600px
-      //margin-left: 4rem;
       margin: 0 auto;
     }
 
@@ -66,13 +65,15 @@
 
     @include respond(small-phone) {
       // When the screen width is LESS THAN 450px
-      margin: 0 auto;
+      float: none;
+      text-align: center;
     }
 
     @include respond(phone) {
       // When the screen width is LESS THAN 600px
-      //margin-right: 5rem;
       margin: 0 auto;
+      float: none;
+      text-align: center;
     }
 
     @include respond(tab-portrait) {
@@ -107,8 +108,7 @@
     &:link,
     &:visited {
       color: $color-white;
-      //background: $color-bloomit-blue;
-      text-decoration: none; // Removes undelines
+      text-decoration: none; // Removes underlines
       text-transform: uppercase;
       display: inline-block;
     }

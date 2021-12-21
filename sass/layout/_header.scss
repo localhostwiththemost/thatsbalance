@@ -6,15 +6,20 @@
       rgba($color-secondary, 0.4)
     ),
     url("../img/heroedit-min.jpg");
+  -webkit-background-size: cover;
   background-size: cover;
+  -webkit-background-position: top;
   background-position: top;
+  -webkit-background-attachment: fixed;
   background-attachment: fixed;
   position: relative;
 
+  /*
   @include respond(small-phone) {
     // When the screen width is LESS THAN 400px scroll with the page(mobile safari bug)
     background-attachment: scroll;
   }
+*/
 
   &__logo-box {
     /*The container for our logo*/

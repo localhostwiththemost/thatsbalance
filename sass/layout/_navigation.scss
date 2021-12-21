@@ -9,15 +9,20 @@
     // When the screen width is LESS THAN 450px
     float: none;
     text-align: center;
+    margin-top: 0;
   }
 
   @include respond(phone) {
     // When the screen width is LESS THAN 600px
-    float: left;
+    float: none;
+    text-align: center;
+    margin-top: 0;
   }
 
   @include respond(tab-portrait) {
-    float: left;
+    float: none;
+    text-align: center;
+    margin-top: 0;
   }
 }
 

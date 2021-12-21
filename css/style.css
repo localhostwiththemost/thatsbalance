@@ -755,12 +755,15 @@ body {
 }
 @media (max-width: 28.125em) {
   .footer__copyright {
-    margin: 0 auto;
+    float: none;
+    text-align: center;
   }
 }
 @media (max-width: 37.5em) {
   .footer__copyright {
     margin: 0 auto;
+    float: none;
+    text-align: center;
   }
 }
 @media (max-width: 56.25em) {
@@ -855,15 +858,19 @@ body {
 .header {
   height: 100vh;
   background-image: linear-gradient(to right bottom, rgba(22, 29, 59, 0.4), rgba(22, 29, 59, 0.4)), url("../img/heroedit-min.jpg");
+  -webkit-background-size: cover;
   background-size: cover;
+  -webkit-background-position: top;
   background-position: top;
+  -webkit-background-attachment: fixed;
   background-attachment: fixed;
   position: relative;
-}
-@media (max-width: 28.125em) {
-  .header {
-    background-attachment: scroll;
-  }
+  /*
+    @include respond(small-phone) {
+      // When the screen width is LESS THAN 400px scroll with the page(mobile safari bug)
+      background-attachment: scroll;
+    }
+  */
 }
 .header__logo-box {
   /*The container for our logo*/
@@ -898,16 +905,21 @@ body {
   .main-nav {
     float: none;
     text-align: center;
+    margin-top: 0;
   }
 }
 @media (max-width: 37.5em) {
   .main-nav {
-    float: left;
+    float: none;
+    text-align: center;
+    margin-top: 0;
   }
 }
 @media (max-width: 56.25em) {
   .main-nav {
-    float: left;
+    float: none;
+    text-align: center;
+    margin-top: 0;
   }
 }
 
