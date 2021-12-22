@@ -34,8 +34,7 @@ $(document).ready(function () {
   );
 });
 
-// CONTACT PAGE FORM DATA TO GOOGLE SHEET
-/*
+// CONTACT PAGE FORM REDIRECT TO THANKS PAGE
 var form = document.getElementById("sheetdb-form");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -44,12 +43,10 @@ form.addEventListener("submit", (e) => {
     body: new FormData(document.getElementById("sheetdb-form")),
   })
     .then((response) => response.json())
-    .then((html) => {
-      // you can put any JS code here
-      alert("success");
+    .then((window) => {
+      window.location.replace("https://www.thatsbalance.com/thanks.html");
     });
 });
-*/
 
 // FAQ PAGE NAV
 $(document).ready(function () {

@@ -9,47 +9,6 @@ if(isset($_POST['email']) && $_POST['email'] !='') {
 if( filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ) {
 if(isset($_POST['phone']) && $_POST['phone'] !='') {
 // IF name,age,email and phone are filled out, submit form
-
-/*
-$userName = $_POST['name'];
-$userAge = $_POST['age'];
-$userEmail = $_POST['email'];
-$userPhone = $_POST['phone'];
-$userRoutine = $_POST['routine'];
-$userDiet = $_POST['diet'];
-$userInjuries = $_POST['injuries'];
-$userGoals = $_POST['goals'];
-$userProgress = $_POST['progress'];
-$userRoadblocks = $_POST['roadblocks'];
-$userTrainer = $_POST['trainer'];
-$userFitprog = $_POST['fitprog'];
-$userFast = $_POST['fast'];
-$userFit = $_POST['fit'];
-$messageSubject = "New Thatsbalance Client";
-
-
-
-$to = "thatisbalance@gmail.com";
-$body = "";
-
-$body .= "From: ".$userName. "\r\n";
-$body .= "Age: ".$userAge. "\r\n";
-$body .= "Email: ".$userEmail. "\r\n";
-$body .= "Phone: ".$userPhone. "\r\n";
-$body .= "Routine: ".$userRoutine. "\r\n";
-$body .= "Diet: ".$userDiet. "\r\n";
-$body .= "Injuries: ".$userInjuries. "\r\n";
-$body .= "Fitness Goals: ".$userGoals. "\r\n";
-$body .= "Fitness Progress Last Month: ".$userProgress. "\r\n";
-$body .= "Roadblocks: ".$userRoadblocks. "\r\n";
-$body .= "Trainer or Program?: ".$userTrainer. "\r\n";
-$body .= "How is their fitness progress going?: ".$userFitprog. "\r\n";
-$body .= "Are they interested in fast progress?: ".$userFast. "\r\n";
-$body .= "Which best fits them?: ".$userFit. "\r\n";
-
-mail($to, $messageSubject, $body);
-*/
-
 $message_sent = true;
 }
 } else {
@@ -76,20 +35,6 @@ $message_sent = true;
     <title>Thatsbalance | Contact</title>
   </head>
   <body>
-    <?php
-    if($message_sent):
-    ?>
-
-<div class="contact-form-intro u-margin-top-big u-margin-bottom-big">
-    <h2 class="heading-secondary-contact">Thanks, we'll be in touch</h2>
-    <div class="u-center-text u-margin-top-small">
-          <a href="index.html" class="btn-text">Return to home page</a>
-        </div>
-  </div>
-
-    <?php
-    else:
-    ?>
     <main>
       <section class="contact-form-section">
         <nav>
@@ -556,9 +501,5 @@ $message_sent = true;
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/script.js"></script>
-  
-    <?php
-  endif;
-  ?>
   </body>
 </html>
