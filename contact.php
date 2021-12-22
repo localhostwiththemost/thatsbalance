@@ -10,6 +10,7 @@ if( filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ) {
 if(isset($_POST['phone']) && $_POST['phone'] !='') {
 // IF name,age,email and phone are filled out, submit form
 
+/*
 $userName = $_POST['name'];
 $userAge = $_POST['age'];
 $userEmail = $_POST['email'];
@@ -47,6 +48,7 @@ $body .= "Are they interested in fast progress?: ".$userFast. "\r\n";
 $body .= "Which best fits them?: ".$userFit. "\r\n";
 
 mail($to, $messageSubject, $body);
+*/
 
 $message_sent = true;
 }
@@ -131,9 +133,9 @@ $message_sent = true;
         <div class="contact-form-container">
           <form
             method="POST"
-            action="contact.php"
+            action="https://sheetdb.io/api/v1/mtg4518ncllep"
             class="form"
-            id="contact-form"
+            id="sheetdb-form"
             name="contact-form"
           >
             <div class="form__group">
@@ -143,7 +145,7 @@ $message_sent = true;
                 placeholder="Name"
                 autocomplete="off"
                 id="name"
-                name="name"
+                name="data[name]"
                 required
               />
               <!--The label and input are connected thru the id and for properties. Both must have the same value(name)-->
@@ -158,7 +160,7 @@ $message_sent = true;
                 placeholder="Age (must be over 18)"
                 autocomplete="off"
                 id="age"
-                name="age"
+                name="data[age]"
                 required
               />
               <label for="age" class="form__label">Age</label>
@@ -172,7 +174,7 @@ $message_sent = true;
                 placeholder="Email"
                 autocomplete="off"
                 id="email"
-                name="email"
+                name="data[email]"
                 required
               />
               <label for="email" class="form__label">Email Address</label>
@@ -186,7 +188,7 @@ $message_sent = true;
                 placeholder="Phone or WhatsApp #"
                 autocomplete="off"
                 id="phone"
-                name="phone"
+                name="data[phone]"
                 required
               />
               <label for="phone" class="form__label">Phone Number</label>
@@ -200,7 +202,7 @@ $message_sent = true;
                 class="form__textarea"
                 rows="4"
                 cols="50"
-                name="routine"
+                name="data[fitnessroutine]"
                 form="contact-form"
                 placeholder="Days per week, excercises you do, etc"
                 id="routine"
@@ -215,7 +217,7 @@ $message_sent = true;
                 class="form__textarea"
                 rows="4"
                 cols="50"
-                name="diet"
+                name="data[diet]"
                 form="contact-form"
                 placeholder="Your typical diet"
                 id="diet"
@@ -231,7 +233,7 @@ $message_sent = true;
                 class="form__textarea"
                 rows="4"
                 cols="50"
-                name="injuries"
+                name="data[injuries]"
                 form="contact-form"
                 placeholder="Preexisting Injuries/Medical Conditions"
                 id="injuries"
@@ -246,7 +248,7 @@ $message_sent = true;
                 class="form__textarea"
                 rows="4"
                 cols="50"
-                name="goals"
+                name="data[goals]"
                 form="contact-form"
                 placeholder="Weight, BMI, etc"
                 id="goals"
@@ -262,7 +264,7 @@ $message_sent = true;
                 class="form__textarea"
                 rows="4"
                 cols="50"
-                name="progress"
+                name="data[progresslastmonth]"
                 form="contact-form"
                 placeholder="Results in the past month"
                 id="progress"
@@ -278,7 +280,7 @@ $message_sent = true;
                 class="form__textarea"
                 rows="4"
                 cols="50"
-                name="roadblocks"
+                name="data[roadblocks]"
                 form="contact-form"
                 placeholder="Roadblocks"
                 id="roadblocks"
@@ -294,7 +296,7 @@ $message_sent = true;
                 class="form__textarea"
                 rows="4"
                 cols="50"
-                name="trainer"
+                name="data[currenttrainer]"
                 form="contact-form"
                 placeholder="If so, describe the program or what your trainer has you do"
                 id="trainer"
@@ -318,7 +320,7 @@ $message_sent = true;
                     class="form__radio-btn"
                     type="radio"
                     id="poorly"
-                    name="fitprog"
+                    name="data[progress]"
                     value="Poorly"
                   /> 
                   <label class="form__radio-label" for="poorly"
@@ -332,7 +334,7 @@ $message_sent = true;
                     class="form__radio-btn"
                     type="radio"
                     id="struggling"
-                    name="fitprog"
+                    name="data[progress]"
                     value="Struggling"
                   />
                   <label class="form__radio-label" for="struggling"
@@ -347,7 +349,7 @@ $message_sent = true;
                     class="form__radio-btn"
                     type="radio"
                     id="successful"
-                    name="fitprog"
+                    name="data[progress]"
                     value="Successful"
                   />
                   <label class="form__radio-label" for="successful"
@@ -374,7 +376,7 @@ $message_sent = true;
                     class="form__radio-btn"
                     type="radio"
                     id="yes"
-                    name="fast"
+                    name="data[interest]"
                     value="Yes"
                   /> 
                   <label class="form__radio-label" for="yes">Yes</label>
@@ -387,7 +389,7 @@ $message_sent = true;
                   class="form__radio-btn"
                   type="radio"
                   id="no"
-                  name="fast"
+                  name="data[interest]"
                   value="No"
                 />
                 <label class="form__radio-label" for="no">No</label>
@@ -399,7 +401,7 @@ $message_sent = true;
                   class="form__radio-btn"
                   type="radio"
                   id="maybe"
-                  name="fast"
+                  name="data[interest]"
                   value="Maybe"
                 />
                 <label class="form__radio-label" for="maybe">Maybe</label>
@@ -422,7 +424,7 @@ $message_sent = true;
                     class="form__radio-btn"
                     type="radio"
                     id="trial"
-                    name="fit"
+                    name="data[fit]"
                     value="Trial"
                   /> 
                   <label class="form__radio-label" for="trial"
@@ -437,7 +439,7 @@ $message_sent = true;
                   class="form__radio-btn"
                   type="radio"
                   id="talkfirst"
-                  name="fit"
+                  name="data[fit]"
                   value="talkfirst"
                 />
                 <label class="form__radio-label" for="talkfirst"
@@ -452,7 +454,7 @@ $message_sent = true;
                   class="form__radio-btn"
                   type="radio"
                   id="moneytight"
-                  name="fit"
+                  name="data[fit]"
                   value="Moneytight"
                 />
                 <label class="form__radio-label" for="moneytight"
@@ -465,7 +467,7 @@ $message_sent = true;
                   class="form__radio-btn"
                   type="radio"
                   id="imready"
-                  name="fit"
+                  name="data[fit]"
                   value="Imready"
                 />
                 <label class="form__radio-label" for="imready"

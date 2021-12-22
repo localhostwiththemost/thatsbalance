@@ -16,17 +16,6 @@ $(document).ready(function () {
   );
 });
 
-// MAIN PAGE TRAINER SECTION COLUMNS/ROWS
-/*
-if ($(window).width() < 600) {
-  $("#trainer-col").removeClass("col-1-of-2");
-}
-
-if ($(window).width() < 600) {
-  $("#trainer-row").removeClass("row");
-}
-*/
-
 // CONTACT PAGE NAV
 $(document).ready(function () {
   /////* For the Sticky Nav*/////
@@ -44,6 +33,23 @@ $(document).ready(function () {
     }
   );
 });
+
+// CONTACT PAGE FORM DATA TO GOOGLE SHEET
+/*
+var form = document.getElementById("sheetdb-form");
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  fetch(form.action, {
+    method: "POST",
+    body: new FormData(document.getElementById("sheetdb-form")),
+  })
+    .then((response) => response.json())
+    .then((html) => {
+      // you can put any JS code here
+      alert("success");
+    });
+});
+*/
 
 // FAQ PAGE NAV
 $(document).ready(function () {
