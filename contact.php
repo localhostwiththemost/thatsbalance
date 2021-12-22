@@ -431,6 +431,21 @@ $message_sent = true;
               </button>
             </div>
           </form>
+        <!--CONTACT PAGE FORM REDIRECT TO THANKS PAGE-->
+        <script>
+          var form = document.getElementById("sheetdb-form");
+          form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          fetch(form.action, {
+          method: "POST",
+          body: new FormData(document.getElementById("sheetdb-form")),
+        })
+        .then((response) => response.json())
+        .then((html) => {
+        window.location.replace("https://www.thatsbalance.com/thanks.html");
+      });
+    });
+        </script>
         </div>
       </section>
     </main>

@@ -34,20 +34,6 @@ $(document).ready(function () {
   );
 });
 
-// CONTACT PAGE FORM REDIRECT TO THANKS PAGE
-var form = document.getElementById("sheetdb-form");
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  fetch(form.action, {
-    method: "POST",
-    body: new FormData(document.getElementById("sheetdb-form")),
-  })
-    .then((response) => response.json())
-    .then((_html) => {
-      window.location.replace("https://www.thatsbalance.com/thanks.html");
-    });
-});
-
 // FAQ PAGE NAV
 $(document).ready(function () {
   /////* For the Sticky Nav*/////
