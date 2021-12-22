@@ -43,7 +43,7 @@ form.addEventListener("submit", (e) => {
     body: new FormData(document.getElementById("sheetdb-form")),
   })
     .then((response) => response.json())
-    .then((window) => {
+    .then((_html) => {
       window.location.replace("https://www.thatsbalance.com/thanks.html");
     });
 });
