@@ -3,11 +3,11 @@
 <?php
 $message_sent = false;
 
-if(isset($_POST['name']) && $_POST['name'] !='') {
-if($_POST['age'] >= 18 && $_POST['age'] !='') {
-if(isset($_POST['email']) && $_POST['email'] !='') {
-if( filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ) {
-if(isset($_POST['phone']) && $_POST['phone'] !='') {
+if(isset($_POST['data[name]']) && $_POST['data[name]'] !='') {
+if($_POST['data[age]'] >= 18 && $_POST['data[age]'] !='') {
+if(isset($_POST['data[email]']) && $_POST['data[email]'] !='') {
+if( filter_var($_POST['data[email]'], FILTER_VALIDATE_EMAIL) ) {
+if(isset($_POST['data[phone]']) && $_POST['data[phone]'] !='') {
 // IF name,age,email and phone are filled out, submit form
 
 $userName = $_POST['data[name]'];
