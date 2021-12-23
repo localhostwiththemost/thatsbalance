@@ -9,6 +9,43 @@ if(isset($_POST['email']) && $_POST['email'] !='') {
 if( filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) ) {
 if(isset($_POST['phone']) && $_POST['phone'] !='') {
 // IF name,age,email and phone are filled out, submit form
+
+$userName = $_POST['data[name]'];
+$userAge = $_POST['data[age]'];
+$userEmail = $_POST['data[email]'];
+$userPhone = $_POST['data[phone]'];
+$userRoutine = $_POST['data[routine]'];
+$userDiet = $_POST['data[diet]'];
+$userInjuries = $_POST['data[injuries]'];
+$userGoals = $_POST['data[goals]'];
+$userProgress = $_POST['data[progresslastmonth]'];
+$userRoadblocks = $_POST['data[roadblocks]'];
+$userTrainer = $_POST['data[currenttrainer]'];
+$userFitprog = $_POST['data[progress]'];
+$userFast = $_POST['data[interest]'];
+$userFit = $_POST['data[fit]'];
+$messageSubject = "New Thatsbalance Client";
+
+$to = "jpowelldev@gmail.com";
+$body = "";
+
+$body .= "From: ".$userName. "\r\n";
+$body .= "Age: ".$userAge. "\r\n";
+$body .= "Email: ".$userEmail. "\r\n";
+$body .= "Phone: ".$userPhone. "\r\n";
+$body .= "Routine: ".$userRoutine. "\r\n";
+$body .= "Diet: ".$userDiet. "\r\n";
+$body .= "Injuries: ".$userInjuries. "\r\n";
+$body .= "Fitness Goals: ".$userGoals. "\r\n";
+$body .= "Fitness Progress Last Month: ".$userProgress. "\r\n";
+$body .= "Roadblocks: ".$userRoadblocks. "\r\n";
+$body .= "Trainer or Program?: ".$userTrainer. "\r\n";
+$body .= "How is their fitness progress going?: ".$userFitprog. "\r\n";
+$body .= "Are they interested in fast progress?: ".$userFast. "\r\n";
+$body .= "Which best fits them?: ".$userFit. "\r\n";
+
+mail($to, $messageSubject, $body);
+
 $message_sent = true;
 }
 } else {
@@ -78,7 +115,7 @@ $message_sent = true;
         <div class="contact-form-container">
           <form
             method="POST"
-            action="https://sheetdb.io/api/v1/mtg4518ncllep"
+            action="https://sheetdb.io/api/v1/hzbk303gywl5o"
             class="form"
             id="sheetdb-form"
             name="contact-form"
@@ -94,7 +131,7 @@ $message_sent = true;
                 required
               />
               <!--The label and input are connected thru the id and for properties. Both must have the same value(name)-->
-              <label for="name" class="form__label">Name</label>
+              <label for="data[name]" class="form__label">Name</label>
             </div>
 
             <div class="form__group">
@@ -108,7 +145,7 @@ $message_sent = true;
                 name="data[age]"
                 required
               />
-              <label for="age" class="form__label">Age</label>
+              <label for="data[age]" class="form__label">Age</label>
             </div>
 
             <div class="form__group">
@@ -122,7 +159,7 @@ $message_sent = true;
                 name="data[email]"
                 required
               />
-              <label for="email" class="form__label">Email Address</label>
+              <label for="data[email]" class="form__label">Email Address</label>
             </div>
 
             <div class="form__group">
@@ -136,18 +173,18 @@ $message_sent = true;
                 name="data[phone]"
                 required
               />
-              <label for="phone" class="form__label">Phone Number</label>
+              <label for="data[phone]" class="form__label">Phone Number</label>
             </div>
 
             <div class="form__group">
-              <label for="routine" class="form__textarea-label"
+              <label for="data[routine]" class="form__textarea-label"
                 >What does your current fitness routine consist of?</label
               >
               <textarea
                 class="form__textarea"
                 rows="4"
                 cols="50"
-                name="data[fitnessroutine]"
+                name="data[routine]"
                 form="contact-form"
                 placeholder="Days per week, excercises you do, etc"
                 id="routine"
@@ -155,7 +192,7 @@ $message_sent = true;
             </div>
 
             <div class="form__group">
-              <label for="diet" class="form__textarea-label"
+              <label for="data[diet]" class="form__textarea-label"
                 >What do you normally eat throughout the day?</label
               >
               <textarea
@@ -170,7 +207,7 @@ $message_sent = true;
             </div>
 
             <div class="form__group">
-              <label for="injuries" class="form__textarea-label"
+              <label for="data[injuries]" class="form__textarea-label"
                 >Do you have any injuries or medical conditions that will affect
                 your training?</label
               >
@@ -186,7 +223,7 @@ $message_sent = true;
             </div>
 
             <div class="form__group">
-              <label for="goals" class="form__textarea-label"
+              <label for="data[goals]" class="form__textarea-label"
                 >What are some of your fitness goals?</label
               >
               <textarea
@@ -201,7 +238,7 @@ $message_sent = true;
             </div>
 
             <div class="form__group">
-              <label for="progress" class="form__textarea-label"
+              <label for="data[progresslastmonth]" class="form__textarea-label"
                 >How much progress toward your fitness goals did you make last
                 month?</label
               >
@@ -217,7 +254,7 @@ $message_sent = true;
             </div>
 
             <div class="form__group">
-              <label for="roadblocks" class="form__textarea-label"
+              <label for="data[roadblocks]" class="form__textarea-label"
                 >What roadblocks are preventing you from attaining your fitness
                 goals?</label
               >
@@ -233,7 +270,7 @@ $message_sent = true;
             </div>
 
             <div class="form__group">
-              <label for="trainer" class="form__textarea-label"
+              <label for="data[currenttrainer]" class="form__textarea-label"
                 >Do you have a personal trainer or are you following a specific
                 program?</label
               >
@@ -385,7 +422,7 @@ $message_sent = true;
                   type="radio"
                   id="talkfirst"
                   name="data[fit]"
-                  value="talkfirst"
+                  value="Talkfirst"
                 />
                 <label class="form__radio-label" for="talkfirst"
                   >I have to talk with my significant other or parents
