@@ -185,7 +185,7 @@ $message_sent = true;
                 rows="4"
                 cols="50"
                 name="data[routine]"
-                form="contact-form"
+                form="sheetdb-form"
                 placeholder="Days per week, excercises you do, etc"
                 id="routine"
               ></textarea>
@@ -200,7 +200,7 @@ $message_sent = true;
                 rows="4"
                 cols="50"
                 name="data[diet]"
-                form="contact-form"
+                form="sheetdb-form"
                 placeholder="Your typical diet"
                 id="diet"
               ></textarea>
@@ -216,7 +216,7 @@ $message_sent = true;
                 rows="4"
                 cols="50"
                 name="data[injuries]"
-                form="contact-form"
+                form="sheetdb-form"
                 placeholder="Preexisting Injuries/Medical Conditions"
                 id="injuries"
               ></textarea>
@@ -231,7 +231,7 @@ $message_sent = true;
                 rows="4"
                 cols="50"
                 name="data[goals]"
-                form="contact-form"
+                form="sheetdb-form"
                 placeholder="Weight, BMI, etc"
                 id="goals"
               ></textarea>
@@ -247,7 +247,7 @@ $message_sent = true;
                 rows="4"
                 cols="50"
                 name="data[progresslastmonth]"
-                form="contact-form"
+                form="sheetdb-form"
                 placeholder="Results in the past month"
                 id="progress"
               ></textarea>
@@ -263,7 +263,7 @@ $message_sent = true;
                 rows="4"
                 cols="50"
                 name="data[roadblocks]"
-                form="contact-form"
+                form="sheetdb-form"
                 placeholder="Roadblocks"
                 id="roadblocks"
               ></textarea>
@@ -279,7 +279,7 @@ $message_sent = true;
                 rows="4"
                 cols="50"
                 name="data[currenttrainer]"
-                form="contact-form"
+                form="sheetdb-form"
                 placeholder="If so, describe the program or what your trainer has you do"
                 id="trainer"
               ></textarea>
