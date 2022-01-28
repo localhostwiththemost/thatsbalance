@@ -7,6 +7,7 @@
       name="description"
       content="Thatsbalance is a 24/7 personal training service that provides workouts, meal plans and motivation all at the click of a button."
     />
+    <meta name="theme-color" content="#161d3b" />
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -62,14 +63,17 @@
         <div class="u-center-text u-margin-bottom-big">
           <h2 class="heading-secondary">Your Trainer</h2>
         </div>
-        <div class="row" id="trainer-row">
-          <div class="col-1-of-2" id="trainer-col">
-            <div class="img-container">
-              <img src="img/pt-min.jpg" class="img-container__img1" />
+        <div class="row">
+          <div class="flex-container flex-container__yourtrainer">
+            <div class="img-container flex-container__yourtrainer--item">
+              <img
+                src="img/pt-min.webp"
+                class="img-container__img1"
+                alt="A picture of Thanyous Wells"
+              />
             </div>
-          </div>
-          <div class="col-1-of-2" id="trainer-col">
-            <div class="certs">
+
+            <div class="certs flex-container__yourtrainer--item">
               <h3 class="heading-tertiary u-center-text">T. Wells</h3>
               <ul>
                 <li><b>Certification</b>: Personal Training from NFPT</li>
@@ -81,6 +85,7 @@
                     href="https://www.instagram.com/t.m.wells/?hl=en"
                     target="_blank"
                     class="text-link"
+                    rel="noopener"
                     >@t.m.wells</a
                   >
                 </li>
@@ -213,6 +218,7 @@
             </div>
           </div>
         </div>
+
         <div class="u-center-text u-margin-top-big">
           <a href="contact.php" class="btn-text">All Workouts &rarr;</a>
         </div>
@@ -226,24 +232,37 @@
           <h3 class="heading-tertiary u-center-text u-margin-bottom-small">
             With the Expertise of T. Wells
           </h3>
-          <p class="u-center-text">
+          <p class="u-center-text u-margin-bottom-small">
             Create a custom mealplan, pivotal for your fitness journey, with the
             help of your very own personal trainer today for only $30.
           </p>
-          <a
-            href="contact.php"
-            class="btn-main btn-main__navy btn-main__animated card__cta"
-            >Create Mealplan</a
-          >
+          <div class="u-center-text">
+            <a
+              href="contact.php"
+              class="btn-main btn-main__navy btn-main__animated"
+              >Create Mealplan</a
+            >
+          </div>
         </div>
 
-        <div class="row u-center-text">
-          <img src="img/4-min.jpg" alt="Autumn pumpkin soup" />
-          <img src="img/5-min.jpg" alt="Paleo beef steak with vegetables" />
-          <img
-            src="img/6-min.jpg"
-            alt="Healthy baguette with egg and vegetables"
-          />
+        <div class="row">
+          <div class="flex-container flex-container__meals">
+            <img
+              src="img/4-min.webp"
+              class="img-container__meals"
+              alt="Autumn pumpkin soup"
+            />
+            <img
+              src="img/5-min.webp"
+              class="img-container__meals"
+              alt="Paleo beef steak with vegetables"
+            />
+            <img
+              src="img/6-min.webp"
+              class="img-container__meals"
+              alt="Healthy baguette with egg and vegetables"
+            />
+          </div>
         </div>
       </section>
     </main>
@@ -257,6 +276,7 @@
                 href="https://www.facebook.com/thatsbalance"
                 target="_blank"
                 class="social__link"
+                rel="noopener"
                 ><ion-icon name="logo-facebook"></ion-icon
               ></a>
             </li>
@@ -265,6 +285,7 @@
                 href="https://www.instagram.com/thatsbalance/"
                 target="_blank"
                 class="social__link"
+                rel="noopener"
                 ><ion-icon name="logo-instagram"></ion-icon
               ></a>
             </li>
@@ -273,8 +294,8 @@
       </div>
 
       <div class="row">
-        <div class="col-1-of-2">
-          <div class="footer__navigation">
+        <div class="flex-container flex-container__footer">
+          <div class="footer__navigation flex-container__footer--item">
             <ul class="footer__list">
               <li class="footer__item">
                 <a href="contact.php" class="footer__link">Sign Up</a>
@@ -290,13 +311,16 @@
               </li>
             </ul>
           </div>
-        </div>
 
-        <div class="col-1-of-2">
-          <p class="footer__copyright">
-            Built by <a href="#" class="footer__link">Joseph Powell</a>; &nbsp;
-            a Houston-based frontend developer. &nbsp; Copyright&copy; by Joseph
-            Powell.
+          <p class="footer__copyright flex-container__footer--item">
+            Built by
+            <a
+              href="https://developerjoe.io/"
+              target="_blank"
+              class="footer__link"
+              rel="noopener"
+              >Joseph Powell</a
+            >; &nbsp; a Houston-based frontend developer.
           </p>
         </div>
       </div>

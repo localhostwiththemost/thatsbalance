@@ -20,8 +20,15 @@
     // transparent because we only want the border to appear when an input is in focus state
     width: 90%; // Takes up 90% of the .book element's width
     display: block; // Must define block to use padding properties
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
     transition: all 0.3s; // Transition from red to green when user types in inputs
     margin: 0 auto; // Centers inputs in container
+
+    @include respond(phone) {
+      // When the screen width is LESS THAN 600px
+      margin-right: 5rem;
+    }
 
     @include respond(small-phone) {
       // When the screen width is LESS THAN 450px
@@ -29,14 +36,10 @@
       float: left;
     }
 
-    @include respond(phone) {
-      // When the screen width is LESS THAN 600px
-      margin-right: 5rem;
-    }
-
     &:focus {
       // When the form is clicked, it is in the focus state
       outline: none; // Removes blue outline
+      -webkit-box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
       box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
       // We apply box-shadow here to make clear the form is in focus state since we removed the outline
       border-bottom: 3px solid $color-success-green;
@@ -45,6 +48,22 @@
     &:focus:invalid {
       // Styles for the input element when in focus state and the input is invalid
       border-bottom: 3px solid $color-error-red;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-grey;
+    }
+
+    &::-moz-placeholder {
+      color: $color-grey;
+    }
+
+    &:-ms-input-placeholder {
+      color: $color-grey;
+    }
+
+    &::-ms-input-placeholder {
+      color: $color-grey;
     }
 
     &::placeholder {
@@ -68,16 +87,9 @@
     margin-right: 5.5rem; // We're using margin to position the labels directly under the placeholders
     margin-top: 0.7rem;
     display: block; // We must define the display as block to use margin properties
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
     transition: all 0.3s;
-
-    @include respond(phone) {
-      // When the screen width is LESS THAN 600px
-      margin-left: 3rem;
-    }
-
-    @include respond(tab-portrait) {
-      margin-left: 3rem;
-    }
 
     @include respond(tab-landscape) {
       margin-left: 3rem;
@@ -89,6 +101,8 @@
     // ... html, they are siblings within the same div.
     opacity: 0; // We need opacity to animate the label appearing
     visibility: hidden; // With opacity:0, the element is stll there just not visible. This fixs it.
+    -webkit-transform: translateY(-4rem);
+    -ms-transform: translateY(-4rem);
     transform: translateY(-4rem);
     // In this initial state, the label will start in the actual input and will then move down and...
     // ... become visble later when the user begins typing in the input.
@@ -105,26 +119,8 @@
     padding: 1rem;
 
     @include respond(small-phone) {
-      // When the screen width is LESS THAN 400px
-      display: block;
-      width: 50%;
-      float: left;
-    }
-
-    @include respond(phone) {
-      // When the screen width is LESS THAN 600px
-      display: block;
-      //margin-left: 12rem;
-    }
-
-    @include respond(tab-portrait) {
-      display: block;
-      margin-left: 9rem;
-    }
-
-    @include respond(tab-landscape) {
-      display: block;
-      margin-left: 9rem;
+      // When the screen width is LESS THAN 450px
+      width: 95%;
     }
 
     &-label {
@@ -139,14 +135,7 @@
         }
       }
 
-      @include respond(small-phone) {
-        // When the screen width is LESS THAN 450px
-        display: block;
-        margin-top: 10rem;
-      }
-
-      @include respond(phone) {
-        // When the screen width is LESS THAN 600px
+      @include respond(tab-landscape) {
         display: block;
       }
 
@@ -154,8 +143,15 @@
         display: block;
       }
 
-      @include respond(tab-landscape) {
+      @include respond(phone) {
+        // When the screen width is LESS THAN 600px
         display: block;
+      }
+
+      @include respond(small-phone) {
+        // When the screen width is LESS THAN 450px
+        display: block;
+        margin-top: 5rem;
       }
     }
   }

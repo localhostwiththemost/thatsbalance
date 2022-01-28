@@ -1,5 +1,6 @@
 .card {
   // FUNCTIONALITY
+  -webkit-perspective: 150rem;
   perspective: 150rem; // The lower the perspective value, the more dramatic.
   // We want a subtle flip in this case, so 1500px
   -moz-perspective: 150rem; // Mozilla Firefox responsive
@@ -10,6 +11,8 @@
 
   &__side {
     height: 51rem;
+    -webkit-transition: all 0.8s ease;
+    -o-transition: all 0.8s ease;
     transition: all 0.8s ease; // all allows all transforms, .8s duration, ease smooths the effect
     position: absolute; // The sides must be positioned on top of each other to complete the effect
     top: 0;
@@ -20,6 +23,7 @@
     backface-visibility: hidden; // Hides the back side of an element, only 1 side is visble at atime
     border-radius: $default-border-radius;
     overflow: hidden; // Imgs are overflowing parent element so we must hide the overflow
+    -webkit-box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.15);
 
     &--front {
@@ -27,9 +31,22 @@
     }
 
     &--back {
+      -webkit-transform: rotateY(180deg);
       transform: rotateY(180deg);
 
       &-1 {
+        background-image: -o-linear-gradient(
+          left top,
+          $color-secondary-light,
+          $color-secondary
+        );
+        background-image: -webkit-gradient(
+          linear,
+          left top,
+          right bottom,
+          from($color-secondary-light),
+          to($color-secondary)
+        );
         background-image: linear-gradient(
           to right bottom,
           $color-secondary-light,
@@ -38,6 +55,18 @@
       }
 
       &-2 {
+        background-image: -o-linear-gradient(
+          left top,
+          $color-primary,
+          $color-primary-dark
+        );
+        background-image: -webkit-gradient(
+          linear,
+          left top,
+          right bottom,
+          from($color-primary),
+          to($color-primary-dark)
+        );
         background-image: linear-gradient(
           to right bottom,
           $color-primary,
@@ -46,6 +75,18 @@
       }
 
       &-3 {
+        background-image: -o-linear-gradient(
+          left top,
+          $color-secondary-light,
+          $color-secondary
+        );
+        background-image: -webkit-gradient(
+          linear,
+          left top,
+          right bottom,
+          from($color-secondary-light),
+          to($color-secondary)
+        );
         background-image: linear-gradient(
           to right bottom,
           $color-secondary-light,
@@ -57,12 +98,14 @@
 
   &:hover &__side--front {
     // When we hover the card, the .card__side--front will be transformed
+    -webkit-transform: rotateY(-180deg);
     transform: rotateY(-180deg);
     // On hover, flips card on y-axis. -180 to get a proper flip
     // ONLY the front side rotates 180 deg
   }
 
   &:hover &__side--back {
+    -webkit-transform: rotateY(0);
     transform: rotateY(0);
     // The back side is already rotated so it stays at 0
   }
@@ -78,30 +121,72 @@
     // top-left: 0 0, top-right: 100% 0, bottom-right: 100% 85%, bottom-left: 0 100%
 
     &--1 {
+      background-image: -o-linear-gradient(
+          right top,
+          $color-secondary-light,
+          $color-secondary
+        ),
+        url(../img/dumbbell-min.webp);
+      background-image: -webkit-gradient(
+          linear,
+          right top,
+          left bottom,
+          from($color-secondary-light),
+          to($color-secondary)
+        ),
+        url(../img/dumbbell-min.webp);
       background-image: linear-gradient(
           to left bottom,
           $color-secondary-light,
           $color-secondary
         ),
-        url(../img/dumbbell-min.jpg);
+        url(../img/dumbbell-min.webp);
     }
 
     &--2 {
+      background-image: -o-linear-gradient(
+          left top,
+          $color-primary,
+          $color-primary-dark
+        ),
+        url(../img/jog2-min.webp);
+      background-image: -webkit-gradient(
+          linear,
+          left top,
+          right bottom,
+          from($color-primary),
+          to($color-primary-dark)
+        ),
+        url(../img/jog2-min.webp);
       background-image: linear-gradient(
           to right bottom,
           $color-primary,
           $color-primary-dark
         ),
-        url(../img/jog2-min.jpg);
+        url(../img/jog2-min.webp);
     }
 
     &--3 {
+      background-image: -o-linear-gradient(
+          left top,
+          $color-secondary,
+          $color-secondary-light
+        ),
+        url(../img/heroedit-min-card.webp);
+      background-image: -webkit-gradient(
+          linear,
+          left top,
+          right bottom,
+          from($color-secondary),
+          to($color-secondary-light)
+        ),
+        url(../img/heroedit-min-card.webp);
       background-image: linear-gradient(
           to right bottom,
           $color-secondary,
           $color-secondary-light
         ),
-        url(../img/heroedit-min.jpg);
+        url(../img/heroedit-min-card.webp);
     }
   }
 
@@ -115,6 +200,14 @@
     top: 12rem;
     right: 2rem;
     width: 75%; // To help force line-break on heading
+
+    @include respond(tab-landscape) {
+      right: 3.8rem;
+    }
+
+    @include respond(tab-portrait) {
+      right: 2rem;
+    }
   }
 
   &__heading-span {
@@ -123,6 +216,18 @@
     box-decoration-break: clone; // Properly aligns each line of heading on top of itself
 
     &--1 {
+      background-image: -o-linear-gradient(
+        left top,
+        rgba($color-secondary, 0.85),
+        rgba($color-secondary, 0.85)
+      );
+      background-image: -webkit-gradient(
+        linear,
+        left top,
+        right bottom,
+        from(rgba($color-secondary, 0.85)),
+        to(rgba($color-secondary, 0.85))
+      );
       background-image: linear-gradient(
         to right bottom,
         rgba($color-secondary, 0.85),
@@ -131,6 +236,18 @@
     }
 
     &--2 {
+      background-image: -o-linear-gradient(
+        left top,
+        rgba($color-primary-dark, 0.85),
+        rgba($color-primary-dark, 0.85)
+      );
+      background-image: -webkit-gradient(
+        linear,
+        left top,
+        right bottom,
+        from(rgba($color-primary-dark, 0.85)),
+        to(rgba($color-primary-dark, 0.85))
+      );
       background-image: linear-gradient(
         to right bottom,
         rgba($color-primary-dark, 0.85),
@@ -139,6 +256,18 @@
     }
 
     &--3 {
+      background-image: -o-linear-gradient(
+        left top,
+        rgba($color-secondary, 0.85),
+        rgba($color-secondary-light, 0.85)
+      );
+      background-image: -webkit-gradient(
+        linear,
+        left top,
+        right bottom,
+        from(rgba($color-secondary, 0.85)),
+        to(rgba($color-secondary-light, 0.85))
+      );
       background-image: linear-gradient(
         to right bottom,
         rgba($color-secondary, 0.85),

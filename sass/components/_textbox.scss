@@ -1,11 +1,71 @@
+// YOUR TRAINER SECTION
+.certs {
+  width: 40%;
+  color: $color-white;
+  background-color: $color-secondary;
+  padding: 2rem 2rem;
+  border-radius: $default-border-radius;
+  -webkit-box-shadow: 0 1.5rem 4rem rgba($color-black, 0.35);
+  box-shadow: 0 1.5rem 4rem rgba($color-black, 0.35);
+  display: block;
+
+  @include respond(tab-portrait) {
+    width: 90%;
+  }
+
+  ul {
+    list-style: none;
+    font-size: $default-font-size;
+    margin-top: 1rem;
+    padding: 0 2rem;
+  }
+
+  p {
+    font-size: $default-font-size;
+    margin-top: 2rem;
+    padding: 0 2rem;
+  }
+
+  blockquote {
+    font-size: $default-font-size;
+    font-style: italic;
+    padding: 0 2rem;
+  }
+
+  figcaption {
+    margin-left: 25rem;
+    font-size: 1.5rem;
+    white-space: nowrap;
+
+    @include respond(tiny-phone) {
+      // width < 375px
+      margin-left: 15rem;
+    }
+
+    @include respond(mini-phone) {
+      // width < 300px
+      margin-left: 10rem;
+    }
+  }
+}
+
 // MEALPLANS SECTION
 .mealplan-textbox {
   width: 60%;
   margin: 0 auto;
+  -webkit-box-shadow: 0 3rem 6rem rgb(0 0 0 / 10%);
   box-shadow: 0 3rem 6rem rgb(0 0 0 / 10%);
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 0.3rem;
   color: #000;
   font-size: 1.6rem;
   padding: 6rem;
+
+  @include respond(small-phone) {
+    width: 80%;
+  }
+
+  @include respond(tiny-phone) {
+    width: 100%;
+  }
 }

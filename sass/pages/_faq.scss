@@ -37,16 +37,12 @@
   font-size: $default-font-size;
   padding: 0 25rem;
 
+  @include respond(tab-landscape) {
+    padding: 0 4rem;
+  }
+
   @include respond(phone) {
     // When the screen width is LESS THAN 600px
     padding: 0 5rem;
-  }
-
-  @include respond(tab-portrait) {
-    padding: 0 4rem;
-  }
-
-  @include respond(tab-landscape) {
-    padding: 0 4rem;
   }
 }

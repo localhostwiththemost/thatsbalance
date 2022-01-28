@@ -42,6 +42,21 @@ ORDER OF MEDIA QUERY DEFINITIONS:
 */
 
 @mixin respond($breakpoint) {
+  // We will pass different breakpoints into this mixin^
+  @if $breakpoint == mini-phone {
+    @media (max-width: 18.75em) {
+      // 300px
+      @content;
+    }
+  }
+
+  @if $breakpoint == tiny-phone {
+    @media (max-width: 23.4375em) {
+      // 375px
+      @content;
+    }
+  }
+
   @if $breakpoint == small-phone {
     @media (max-width: 28.125em) {
       // 450px
@@ -49,7 +64,6 @@ ORDER OF MEDIA QUERY DEFINITIONS:
     }
   }
 
-  // We will pass different breakpoints into this mixin^
   @if $breakpoint == phone {
     // The if directive is the same as an if statement in JS
     @media (max-width: 37.5em) {

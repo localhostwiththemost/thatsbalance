@@ -1,23 +1,25 @@
 .img-container {
   display: block;
 
-  @include respond(phone) {
-    visibility: hidden;
-    display: none;
-  }
-
-  @include respond(tab-portrait) {
-    visibility: hidden;
-    display: none;
-  }
-
-  @include respond(tab-landscape) {
-    margin-left: 8rem;
-  }
-
   &__img1 {
-    width: 110%;
     border-radius: $default-border-radius;
+    -webkit-box-shadow: 0 1.5rem 4rem rgba($color-black, 0.35);
     box-shadow: 0 1.5rem 4rem rgba($color-black, 0.35);
+
+    @include respond(tab-portrait) {
+      // width < 900px?
+      width: 100%;
+    }
+  }
+
+  &__meals {
+    border-radius: $default-border-radius;
+    -webkit-box-shadow: 0 1.5rem 4rem rgba($color-black, 0.35);
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.35);
+
+    @include respond(tiny-phone) {
+      // width < 375
+      width: 75%;
+    }
   }
 }

@@ -1,29 +1,45 @@
 .header {
   height: 100vh;
+  -webkit-background-image: -webkit-gradient(
+      linear,
+      left top,
+      right bottom,
+      from(rgba($color-secondary, 0.4)),
+      to(rgba($color-secondary, 0.4))
+    ),
+    url("../img/heroedit-min.webp");
   -webkit-background-image: linear-gradient(
       to right bottom,
       rgba($color-secondary, 0.4),
       rgba($color-secondary, 0.4)
     ),
-    url("../img/heroedit-min.jpg");
+    url("../img/heroedit-min.webp");
+  background-image: -o-linear-gradient(
+      left top,
+      rgba($color-secondary, 0.4),
+      rgba($color-secondary, 0.4)
+    ),
+    url("../img/heroedit-min.webp");
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      right bottom,
+      from(rgba($color-secondary, 0.4)),
+      to(rgba($color-secondary, 0.4))
+    ),
+    url("../img/heroedit-min.webp");
   background-image: linear-gradient(
       to right bottom,
       rgba($color-secondary, 0.4),
       rgba($color-secondary, 0.4)
     ),
-    url("../img/heroedit-min.jpg");
-  -webkit-background-size: cover;
+    url("../img/heroedit-min.webp");
   background-size: cover;
   -webkit-background-position: top;
   background-position: top;
   -webkit-background-attachment: fixed;
   background-attachment: fixed;
   position: relative;
-
-  @include respond(small-phone) {
-    // When the screen width is LESS THAN 400px scroll with the page(mobile safari bug)
-    background-attachment: scroll;
-  }
 
   @include respond(phone) {
     // When the screen width is LESS THAN 600px scroll with the page(mobile safari bug)
@@ -47,6 +63,8 @@
     position: absolute;
     top: 50%; /*40% from the top and 50% from the left of the header(parent element)*/
     left: 50%; /*Measurement starts at the top left of the .text-box element(Therefore its off center)*/
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
     transform: translate(
       -50%,
       -50%

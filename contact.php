@@ -5,61 +5,61 @@ $message_sent = false;
 
 if(isset($_POST['data[name]']) && $_POST['data[name]'] !='') {
 if($_POST['data[age]'] >= 18 && $_POST['data[age]'] !='') {
-if(isset($_POST['data[email]']) && $_POST['data[email]'] !='') {
-if( filter_var($_POST['data[email]'], FILTER_VALIDATE_EMAIL) ) {
-if(isset($_POST['data[phone]']) && $_POST['data[phone]'] !='') {
-// IF name,age,email and phone are filled out, submit form
-
-$userName = $_POST['data[name]'];
-$userAge = $_POST['data[age]'];
-$userEmail = $_POST['data[email]'];
-$userPhone = $_POST['data[phone]'];
-$userRoutine = $_POST['data[routine]'];
-$userDiet = $_POST['data[diet]'];
-$userInjuries = $_POST['data[injuries]'];
-$userGoals = $_POST['data[goals]'];
-$userProgress = $_POST['data[progresslastmonth]'];
+if(isset($_POST['data[email]']) && $_POST['data[email]'] !='') { if(
+filter_var($_POST['data[email]'], FILTER_VALIDATE_EMAIL) ) {
+if(isset($_POST['data[phone]']) && $_POST['data[phone]'] !='') { 
+// IF name,age,email and phone are filled out, submit form 
+$userName = $_POST['data[name]']; 
+$userAge = $_POST['data[age]']; 
+$userEmail = $_POST['data[email]']; 
+$userPhone = $_POST['data[phone]']; 
+$userRoutine = $_POST['data[routine]']; 
+$userDiet = $_POST['data[diet]']; 
+$userInjuries = $_POST['data[injuries]']; 
+$userGoals = $_POST['data[goals]']; 
+$userProgress = $_POST['data[progresslastmonth]']; 
 $userRoadblocks = $_POST['data[roadblocks]'];
-$userTrainer = $_POST['data[currenttrainer]'];
-$userFitprog = $_POST['data[progress]'];
-$userFast = $_POST['data[interest]'];
-$userFit = $_POST['data[fit]'];
-$messageSubject = "New Thatsbalance Client";
-
-$to = "jpowelldev@gmail.com";
-$body = "";
-
-$body .= "From: ".$userName. "\r\n";
-$body .= "Age: ".$userAge. "\r\n";
-$body .= "Email: ".$userEmail. "\r\n";
-$body .= "Phone: ".$userPhone. "\r\n";
-$body .= "Routine: ".$userRoutine. "\r\n";
-$body .= "Diet: ".$userDiet. "\r\n";
+$userTrainer = $_POST['data[currenttrainer]']; 
+$userFitprog = $_POST['data[progress]']; 
+$userFast = $_POST['data[interest]']; 
+$userFit = $_POST['data[fit]']; 
+$messageSubject = "New Thatsbalance Client"; 
+$to = "jpowelldev@gmail.com"; 
+$body = ""; 
+$body .= "From: ".$userName. "\r\n"; 
+$body .= "Age: ".$userAge. "\r\n"; 
+$body .= "Email: ".$userEmail. "\r\n"; 
+$body .= "Phone: ".$userPhone. "\r\n"; 
+$body .= "Routine: ".$userRoutine. "\r\n"; 
+$body .= "Diet: ".$userDiet. "\r\n"; 
 $body .= "Injuries: ".$userInjuries. "\r\n";
-$body .= "Fitness Goals: ".$userGoals. "\r\n";
-$body .= "Fitness Progress Last Month: ".$userProgress. "\r\n";
+$body .= "Fitness Goals: ".$userGoals. "\r\n"; 
+$body .= "Fitness Progress Last Month: ".$userProgress. "\r\n"; 
 $body .= "Roadblocks: ".$userRoadblocks. "\r\n";
-$body .= "Trainer or Program?: ".$userTrainer. "\r\n";
-$body .= "How is their fitness progress going?: ".$userFitprog. "\r\n";
-$body .= "Are they interested in fast progress?: ".$userFast. "\r\n";
-$body .= "Which best fits them?: ".$userFit. "\r\n";
+$body .= "Trainer or Program?: ".$userTrainer. "\r\n"; 
+$body .= "How is their fitness progress going?: ".$userFitprog. "\r\n"; 
+$body .= "Are they interested in fast progress?: ".$userFast. "\r\n"; 
+$body .= "Which best fits them?: ".$userFit. "\r\n"; 
+mail($to, $messageSubject, $body); $message_sent = true; 
+} 
+}
 
-mail($to, $messageSubject, $body);
-
-$message_sent = true;
-}
-} else {
-  $invalid_class_name = "form-invalid";
-}
-}
-}
-}
+else { $invalid_class_name = "form-invalid"; 
+} 
+} 
+} 
+} 
 ?>
 
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Answer a few questions for your personal trainer, Thanyous Wells, for a free fitness evaluation and training consultation."
+    />
+    <meta name="theme-color" content="#161d3b" />
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -76,7 +76,7 @@ $message_sent = true;
       <section class="contact-form-section">
         <nav>
           <div class="row">
-            <ul class="contact-nav">
+            <ul class="main-nav-other">
               <li>
                 <a href="contact.php">Join</a>
               </li>
@@ -121,62 +121,35 @@ $message_sent = true;
             name="contact-form"
           >
             <div class="form__group">
-              <input
-                type="text"
-                class="form__input <?= $invalid_class_name ?? "" ?>"
-                placeholder="Name"
-                autocomplete="off"
-                id="name"
-                name="data[name]"
-                required
-              />
+              <input type="text" class="form__input
+              <?= $invalid_class_name ?? "" ?>" placeholder="Name"
+              autocomplete="off" id="name" name="data[name]" required />
               <!--The label and input are connected thru the id and for properties. Both must have the same value(name)-->
               <label for="data[name]" class="form__label">Name</label>
             </div>
 
             <div class="form__group">
-              <input
-                type="number"
-                inputmode="numeric"
-                class="form__input <?= $invalid_class_name ?? "" ?>"
-                placeholder="Age (must be over 18)"
-                autocomplete="off"
-                id="age"
-                name="data[age]"
-                required
-              />
+              <input type="number" inputmode="numeric" class="form__input
+              <?= $invalid_class_name ?? "" ?>" placeholder="Age (must be over
+              18)" autocomplete="off" id="age" name="data[age]" required />
               <label for="data[age]" class="form__label">Age</label>
             </div>
 
             <div class="form__group">
-              <input
-                type="email"
-                inputmode="email"
-                class="form__input <?= $invalid_class_name ?? "" ?>"
-                placeholder="Email"
-                autocomplete="off"
-                id="email"
-                name="data[email]"
-                required
-              />
+              <input type="email" inputmode="email" class="form__input
+              <?= $invalid_class_name ?? "" ?>" placeholder="Email"
+              autocomplete="off" id="email" name="data[email]" required />
               <label for="data[email]" class="form__label">Email Address</label>
             </div>
 
             <div class="form__group">
-              <input
-                type="number"
-                inputmode="numeric"
-                class="form__input <?= $invalid_class_name ?? "" ?>"
-                placeholder="Phone or WhatsApp #"
-                autocomplete="off"
-                id="phone"
-                name="data[phone]"
-                required
-              />
+              <input type="number" inputmode="numeric" class="form__input
+              <?= $invalid_class_name ?? "" ?>" placeholder="Phone or WhatsApp
+              #" autocomplete="off" id="phone" name="data[phone]" required />
               <label for="data[phone]" class="form__label">Phone Number</label>
             </div>
 
-            <div class="form__group">
+            <div class="form__group flex-container flex-container__form">
               <label for="data[routine]" class="form__textarea-label"
                 >What does your current fitness routine consist of?</label
               >
@@ -191,7 +164,7 @@ $message_sent = true;
               ></textarea>
             </div>
 
-            <div class="form__group">
+            <div class="form__group flex-container flex-container__form">
               <label for="data[diet]" class="form__textarea-label"
                 >What do you normally eat throughout the day?</label
               >
@@ -206,7 +179,7 @@ $message_sent = true;
               ></textarea>
             </div>
 
-            <div class="form__group">
+            <div class="form__group flex-container flex-container__form">
               <label for="data[injuries]" class="form__textarea-label"
                 >Do you have any injuries or medical conditions that will affect
                 your training?</label
@@ -222,7 +195,7 @@ $message_sent = true;
               ></textarea>
             </div>
 
-            <div class="form__group">
+            <div class="form__group flex-container flex-container__form">
               <label for="data[goals]" class="form__textarea-label"
                 >What are some of your fitness goals?</label
               >
@@ -237,7 +210,7 @@ $message_sent = true;
               ></textarea>
             </div>
 
-            <div class="form__group">
+            <div class="form__group flex-container flex-container__form">
               <label for="data[progresslastmonth]" class="form__textarea-label"
                 >How much progress toward your fitness goals did you make last
                 month?</label
@@ -253,7 +226,7 @@ $message_sent = true;
               ></textarea>
             </div>
 
-            <div class="form__group">
+            <div class="form__group flex-container flex-container__form">
               <label for="data[roadblocks]" class="form__textarea-label"
                 >What roadblocks are preventing you from attaining your fitness
                 goals?</label
@@ -269,7 +242,7 @@ $message_sent = true;
               ></textarea>
             </div>
 
-            <div class="form__group">
+            <div class="form__group flex-container flex-container__form">
               <label for="data[currenttrainer]" class="form__textarea-label"
                 >Do you have a personal trainer or are you following a specific
                 program?</label
@@ -468,25 +441,26 @@ $message_sent = true;
               </button>
             </div>
           </form>
-        <!--CONTACT PAGE FORM REDIRECT TO THANKS PAGE-->
-        <script>
-          var form = document.getElementById("sheetdb-form");
-          form.addEventListener("submit", (e) => {
-          e.preventDefault();
-          fetch(form.action, {
-          method: "POST",
-          body: new FormData(document.getElementById("sheetdb-form")),
-        })
-        .then((response) => response.json())
-        .then((html) => {
-        window.location.replace("https://www.thatsbalance.com/thanks.html");
-      });
-    });
-        </script>
+          <!--CONTACT PAGE FORM REDIRECT TO THANKS PAGE-->
+          <script>
+            var form = document.getElementById("sheetdb-form");
+            form.addEventListener("submit", (e) => {
+              e.preventDefault();
+              fetch(form.action, {
+                method: "POST",
+                body: new FormData(document.getElementById("sheetdb-form")),
+              })
+                .then((response) => response.json())
+                .then((html) => {
+                  window.location.replace(
+                    "https://www.thatsbalance.com/thanks.html"
+                  );
+                });
+            });
+          </script>
         </div>
       </section>
     </main>
-
 
     <footer class="footer">
       <div class="row social">
@@ -497,6 +471,7 @@ $message_sent = true;
                 href="https://www.facebook.com/thatsbalance"
                 target="_blank"
                 class="social__link"
+                rel="noopener"
                 ><ion-icon name="logo-facebook"></ion-icon
               ></a>
             </li>
@@ -505,6 +480,7 @@ $message_sent = true;
                 href="https://www.instagram.com/thatsbalance/"
                 target="_blank"
                 class="social__link"
+                rel="noopener"
                 ><ion-icon name="logo-instagram"></ion-icon
               ></a>
             </li>
@@ -513,8 +489,8 @@ $message_sent = true;
       </div>
 
       <div class="row">
-        <div class="col-1-of-2">
-          <div class="footer__navigation">
+        <div class="flex-container flex-container__footer">
+          <div class="footer__navigation flex-container__footer--item">
             <ul class="footer__list">
               <li class="footer__item">
                 <a href="contact.php" class="footer__link">Join</a>
@@ -530,13 +506,15 @@ $message_sent = true;
               </li>
             </ul>
           </div>
-        </div>
 
-        <div class="col-1-of-2">
-          <p class="footer__copyright">
-            Built by <a href="#" class="footer__link">Joseph Powell</a>; &nbsp;
-            a Houston-based frontend developer. &nbsp; Copyright&copy; by Joseph
-            Powell.
+          <p class="footer__copyright flex-container__footer--item">
+            Built by
+            <a
+              href="https://developerjoe.io/"
+              class="footer__link"
+              rel="noopener"
+              >Joseph Powell</a
+            >; &nbsp; a Houston-based frontend developer.
           </p>
         </div>
       </div>

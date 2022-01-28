@@ -13,22 +13,34 @@ body {
     // PERSONAL TRAINING. ANYTIME. ANYWHERE. heading
     display: block; /*Block elements create linebreaks before and after them(what we want here)*/
     font-size: 6rem;
-    //font-weight: 800;
     font-weight: 300;
     letter-spacing: 0.5rem;
     white-space: nowrap;
+    -webkit-animation-name: moveInTop;
     animation-name: moveInTop;
+    -webkit-animation-duration: 1s;
     animation-duration: 1s;
+    -webkit-animation-timing-function: ease-out;
     animation-timing-function: ease-out; /*Faster to start, slower to end*/
-
-    @include respond(small-phone) {
-      // When the screen width is LESS THAN 450px
-      //font-size: 1rem;
-    }
 
     @include respond(phone) {
       // When the screen width is LESS THAN 600px, we want to decrease the size of the header text
+      font-size: 4rem;
+    }
+
+    @include respond(small-phone) {
+      // When the screen width is LESS THAN 450px
+      font-size: 3rem;
+    }
+
+    @include respond(tiny-phone) {
+      // When the screen width is LESS THAN 375px
       font-size: 2.5rem;
+    }
+
+    @include respond(mini-phone) {
+      // When the screen width is LESS THAN 300px
+      font-size: 2.3rem;
     }
   }
 
@@ -40,10 +52,20 @@ body {
     letter-spacing: 0.3rem;
     margin-bottom: 2rem; // Space between heading and btn below
     white-space: nowrap;
+    -webkit-animation-name: moveInBottom;
     animation-name: moveInBottom;
     //animation-delay: 0.2s;
+    -webkit-animation-duration: 2.6s;
     animation-duration: 2.6s;
     //animation-timing-function: ease-out; /*Faster to start, slower to end*/
+
+    @include respond(small-phone) {
+      font-size: 1.8rem;
+    }
+
+    @include respond(tiny-phone) {
+      font-size: 1.6rem;
+    }
   }
 
   &--title {

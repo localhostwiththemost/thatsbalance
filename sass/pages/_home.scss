@@ -1,13 +1,49 @@
 .section-yourtrainer {
   padding: 8rem 0; // 100px top/bottom, 0 left/right
   background-color: $color-offwhite;
+
+  @include respond(tab-landscape) {
+    // width < 1200px
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  @include respond(tab-portrait) {
+    // width < 1200px
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .section-workouts {
   padding: 8rem 0;
+
+  @include respond(tab-landscape) {
+    // width < 1200px
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  @include respond(tab-portrait) {
+    // width < 900px
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .section-mealplan {
   padding: 8rem 0;
   background-color: $color-offwhite;
+
+  @include respond(tab-landscape) {
+    // width < 1200px
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  @include respond(tab-portrait) {
+    // width < 900px
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
