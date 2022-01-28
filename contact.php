@@ -130,8 +130,7 @@ else { $invalid_class_name = "form-invalid";
 
             <div class="form__group">
               <input type="number" inputmode="numeric" class="form__input
-              <?= $invalid_class_name ?? "" ?>" placeholder="Age (must be over
-              18)" autocomplete="off" id="age" name="data[age]" required />
+              <?= $invalid_class_name ?? "" ?>" placeholder="Age (must be over 18)" autocomplete="off" id="age" name="data[age]" required />
               <label for="data[age]" class="form__label">Age</label>
             </div>
 
@@ -144,8 +143,7 @@ else { $invalid_class_name = "form-invalid";
 
             <div class="form__group">
               <input type="number" inputmode="numeric" class="form__input
-              <?= $invalid_class_name ?? "" ?>" placeholder="Phone or WhatsApp
-              #" autocomplete="off" id="phone" name="data[phone]" required />
+              <?= $invalid_class_name ?? "" ?>" placeholder="Phone or WhatsApp #" autocomplete="off" id="phone" name="data[phone]" required />
               <label for="data[phone]" class="form__label">Phone Number</label>
             </div>
 

@@ -39,6 +39,7 @@ html {
   font-size: 62.5%;
   /*62.5% of 16px = 10px (We use a % to be more user friendly, 16px is default)*/
   /*Global font-size (Each rem unit is now 10px)*/
+  scroll-behavior: smooth;
 }
 @media (min-width: 112.5em) {
   html {

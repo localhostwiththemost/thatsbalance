@@ -13,6 +13,7 @@ html {
   font-size: 62.5%; /*62.5% of 16px = 10px (We use a % to be more user friendly, 16px is default)*/
   /*Global font-size (Each rem unit is now 10px)*/
   // 1 REM = 10px
+  scroll-behavior: smooth;
 
   // FOR MEDIA QUERIES
   @include respond(big-desktop) {
